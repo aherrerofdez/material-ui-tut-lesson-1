@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Booking from './pages/Booking'
-import Availability from './pages/Availability'
+import Spaces from './pages/Spaces'
 import Contact from './pages/Contact'
 import Profile from './pages/Profile'
 import Reservations from './pages/Reservations'
@@ -17,8 +17,8 @@ function App() {
         <Route path="/booking">
           <Booking />
         </Route>
-        <Route path="/availability">
-          <Availability />
+        <Route path="/spaces">
+          <Spaces />
         </Route>
         <Route path="/contact-us">
           <Contact />

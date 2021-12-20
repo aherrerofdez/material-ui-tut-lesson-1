@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Link from '@mui/material/Link';
 
-const pages = ['Booking', 'Availability', 'Contact Us'];
+const pages = ['Spaces', 'Booking', 'Contact Us'];
 const settings = ['Profile', 'My Reservations', 'Logout'];
 
 const ResponsiveAppBar = () => {
