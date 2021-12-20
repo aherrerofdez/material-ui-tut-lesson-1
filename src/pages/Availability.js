@@ -3,6 +3,8 @@ import Header from '../components/Header'
 
 export default function Availability() {
   return (
-    <Header />
+    <>
+      <Header />
+    </>
   )
 }
