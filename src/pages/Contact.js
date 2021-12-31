@@ -8,8 +8,24 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 export default function Contact() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    window.location.reload(true);
+  };
+
   return (
     <>
       <Header />
@@ -25,29 +41,14 @@ export default function Contact() {
           <Grid item xs={12} sm={6} sx = {{paddingLeft: 5, paddingTop: 2, paddingRight: 5,}}>
             <div>
               <Typography sx = {{fontWeight: 'bold'}}>
-                Name
+                Full name
               </Typography>
               <TextField
                 required
-                id="outlined-basic"
-                placeholder="Insert your name"
+                id="name_textfield"
+                placeholder="Insert your full name"
                 helperText="Required*"
-                fullWidth
-              />
-            </div>
-          </Grid>
-
-          <Grid item xs={12} sm={6} sx = {{paddingLeft: 5, paddingTop: 2, paddingRight: 5,}}>
-            <div>
-              <Typography sx = {{fontWeight: 'bold'}}>
-                Surname
-              </Typography>
-              <TextField
-                required
-                fullWidth
-                id="outlined-required"
-                placeholder="Insert your surname"
-                helperText="Required*"
+                fullWidth                                         
               />
             </div>
           </Grid>
@@ -60,7 +61,7 @@ export default function Contact() {
               <TextField
                 required
                 fullWidth
-                id="outlined-required"
+                id="email_textfield"
                 placeholder="Insert your email address"
                 helperText="Required*"
               />
@@ -75,7 +76,7 @@ export default function Contact() {
               <TextField
                 required
                 fullWidth
-                id="outlined-multiline-static"
+                id="message_textfield"
                 placeholder="Insert your message here"
                 helperText="Required*"
                 multiline
@@ -84,14 +85,36 @@ export default function Contact() {
             </div>
           </Grid>
 
-              <Grid item xs={12} sx = {{marginLeft: 5, marginTop: 2, marginRight: 5}}>
-                <Button variant="contained" endIcon={<SendIcon />}>
-                  Send
-                </Button>
-                </Grid>
+          <Grid item xs={12} sx = {{marginLeft: 5, marginTop: 2, marginRight: 5}}>
+            <Button variant="contained" endIcon={<SendIcon />} onClick={handleClickOpen}>
+              Send
+            </Button>
+          </Grid>
 
         </Grid>
       </Box>
+      
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"We received your message!"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            We will get back to you very soon to make sure we solve all your doubts!
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} autoFocus>
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
+      
     </>
   )
 }
