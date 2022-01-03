@@ -5,20 +5,28 @@ import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
-import Stack from '@mui/material/Stack';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { useForm } from "react-hook-form";
+import { waitFor } from '@testing-library/react';
 
 export default function Contact() {
+  {/*data registration and validation*/}
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  }
+
+  {/*dialog to confirm submission of message*/}
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
-    setOpen(true);
+      setOpen(true);
   };
 
   const handleClose = () => {
@@ -31,7 +39,10 @@ export default function Contact() {
       <Header />
       <Box 
         component="form"
-        sx={{ '& .MuiTextField-root': {marginTop: 2 }, flexGrow: 1 }}>
+        sx={{ '& .MuiTextField-root': {marginTop: 2 }, flexGrow: 1 }}
+        onSubmit={handleSubmit(onSubmit), handleClickOpen}
+        >
+        
         <Typography variant='h5' sx = {{paddingLeft: 5, paddingTop: 5, paddingBottom: 2, fontWeight: 'bold', fontFamily: 'montserrat'}}>
             Contact us
         </Typography>
@@ -48,7 +59,8 @@ export default function Contact() {
                 id="name_textfield"
                 placeholder="Insert your full name"
                 helperText="Required*"
-                fullWidth                                         
+                fullWidth
+                {...register("fullName", {required: true})}                                         
               />
             </div>
           </Grid>
@@ -64,6 +76,7 @@ export default function Contact() {
                 id="email_textfield"
                 placeholder="Insert your email address"
                 helperText="Required*"
+                {...register("email", {required: true})}
               />
             </div>
           </Grid>
@@ -81,12 +94,13 @@ export default function Contact() {
                 helperText="Required*"
                 multiline
                 rows={4}
+                {...register("message", {required: true})}
               />
             </div>
           </Grid>
 
           <Grid item xs={12} sx = {{marginLeft: 5, marginTop: 2, marginRight: 5}}>
-            <Button variant="contained" endIcon={<SendIcon />} onClick={handleClickOpen}>
+            <Button type = 'submit' variant="contained" endIcon={<SendIcon />}>
               Send
             </Button>
           </Grid>
