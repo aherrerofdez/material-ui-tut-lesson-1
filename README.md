@@ -1,6 +1,6 @@
 ### Project for the course on Accessible Design and Assistive Products
 
-Download the code & run **npm install** to install dependencies before starting the app.
+Download the code and run in the downloaded folder path **```npm install```** to install dependencies before starting the app.
 
 You'll also need to install Material UI as a dependency. To do this run:
 
@@ -11,6 +11,6 @@ You'll also need to install Material UI as a dependency. To do this run:
 ``` npm install @material-ui/data-grid ```
 
 
-Run **```npm start```**
+Finally, run **```npm start```**
 
 And the application should start on http://localhost:3000/
