@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Link from '@mui/material/Link';
 
 const pages = ['Spaces', 'Booking', 'Contact Us'];
-const settings = ['Profile', 'My Reservations', 'Logout'];
+const settings = ['Profile', 'My Reservations'];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

@@ -5,7 +5,6 @@ import Spaces from './pages/Spaces'
 import Contact from './pages/Contact'
 import Profile from './pages/Profile'
 import Reservations from './pages/Reservations'
-import Logout from './pages/Logout'
 
 function App() {
   return (
@@ -26,11 +25,8 @@ function App() {
         <Route path="/profile">
           <Profile />
         </Route>
-        <Route path="/reservations">
+        <Route path="/my-reservations">
           <Reservations />
-        </Route>
-        <Route path="/logout">
-          <Logout />
         </Route>
       </Switch>
     </Router>
