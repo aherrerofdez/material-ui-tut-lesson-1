@@ -4,7 +4,11 @@ Download the code or clone this repository on your local machine.
 
 ## Available Scripts
 
-In the project directory, you can run:
+First, you will need to install the dependencies in the project directory, by running:
+
+### `npm install`
+
+After installing the dependencies, you can run:
 
 ### `npm start`
 
