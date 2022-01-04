@@ -11,6 +11,6 @@ You'll also need to install Material UI as a dependency. To do this run:
 ``` npm install @material-ui/data-grid ```
 
 
-Run **npm start**
+Run **```npm start```**
 
 And the application should start on http://localhost:3000/
