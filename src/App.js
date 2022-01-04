@@ -13,11 +13,11 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/booking">
-          <Booking />
-        </Route>
         <Route path="/spaces">
           <Spaces />
+        </Route>
+        <Route path="/booking">
+          <Booking />
         </Route>
         <Route path="/contact-us">
           <Contact />

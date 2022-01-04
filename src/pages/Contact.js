@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from '../components/Header'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -12,17 +11,17 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
-{/*
+/*
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle'; 
-*/}
+*/
 
 export default function Contact() {
   
-  {/*data registration and validation*/}
+  /*data registration and validation*/
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
@@ -30,18 +29,16 @@ export default function Contact() {
     alert('We received your message! We will get back to you soon!')
   }
 
-  {/*dialog to confirm submission of message (not working)
+  /*dialog to confirm submission of message (not working)
   const [open, setOpen] = React.useState(false);
-
   const handleClickOpen = () => {
       setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
     window.location.reload(true);
   };
-  */}
+  */
 
   return (
     <>

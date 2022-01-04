@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from '../components/Header';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
@@ -9,7 +8,6 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Link } from 'react-router-dom';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
