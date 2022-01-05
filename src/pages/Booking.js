@@ -15,28 +15,34 @@ import MenuItem from '@mui/material/MenuItem'
 import Select from '@mui/material/Select'
 import { ThemeProvider } from '@mui/material/styles'
 import theme from '../components/Theme'
+import AdapterDayjs from '@mui/lab/AdapterDayjs'
+import LocalizationProvider from '@mui/lab/LocalizationProvider'
+import DatePicker from '@mui/lab/DatePicker'
 
 export default function Booking() {
 
   /* spaces radiobuttons*/
-  const [value, setValue] = React.useState('big_blue');
+  const [space, setSpace] = React.useState('big_blue')
 
   const handleChangeSpace = (event) => {
-    setValue(event.target.value)
+    setSpace(event.target.value)
   }
+
+  /* handling the date picker */
+  const [date, setDate] = React.useState(null);
 
   /*basic selection for time and duration*/
   const [time, setTime] = React.useState('')
 
   const handleChangeTime = (event) => {
     setTime(event.target.value)
-  };
+  }
 
   const [duration, setDuration] = React.useState('')
 
   const handleChangeDuration = (event) => {
     setDuration(event.target.value)
-  };
+  }
 
   /*data registration and validation*/
   const { register } = useForm();
@@ -77,7 +83,7 @@ export default function Booking() {
               </Typography>
               <Box sx={{ display: 'flex' }}>
                 <FormControl required component="fieldset" sx={{ m: 3, m: 0 }} variant="standard">
-                  <RadioGroup aria-label="space" name="controlled-radio-buttons-group" value={value} 
+                  <RadioGroup aria-label="space" name="controlled-radio-buttons-group" value={space} 
                     onChange={handleChangeSpace}>
                     <FormControlLabel value="big_blue" control={<Radio />} label="Big Blue Co-Working Space" />
                     <FormControlLabel value="plants" control={<Radio />} label="Plants Co-Working Space" />
@@ -95,13 +101,14 @@ export default function Booking() {
               <Typography sx = {{fontWeight: 'bold'}}>
                 Select the date
               </Typography>
-              <TextField
-                required
-                fullWidth
-                id="date"
-                placeholder="Insert the date"
-                helperText="Required*"
-                {...register("message", {required: true})} />
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DatePicker
+                  required
+                  value={date}
+                  sx = {{ color: theme.palette.primary.main }}
+                  onChange={(newValue) => { setDate(newValue) }}
+                  renderInput={(params) => <TextField {...params} />}/>
+              </LocalizationProvider>
             </Grid>
 
             <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 2 }}>
