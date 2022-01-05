@@ -12,15 +12,8 @@ import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import Link from '@mui/material/Link'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#025AA2'
-    }
-  }
-})
+import { ThemeProvider } from '@mui/material/styles'
+import theme from './Theme'
 
 const pages = ['Spaces', 'Booking', 'Contact Us']
 const settings = ['Profile', 'My Reservations']
@@ -62,14 +55,14 @@ const ResponsiveAppBar = () => {
             </Link>
 
             {/* Displays MENU in desktop version */}
-            <Box sx={{ flexGrow: 1, display: { xs:'none', md:'flex' }, marginLeft:'10px'}}>
+            <Box sx={{ flexGrow: 1, display: { xs:'none', md:'flex' }, ml:'10px'}}>
               {pages.map((page) => (
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
                   href={page.toLowerCase().replace(/\s/g, '-')}
-                  sx={{ my: 2, color: 'white', marginRight:'10px', paddingTop:'9px',  
-                      ':hover': {bgcolor: '#ffffff', color: 'primary.main',}}} >
+                  sx={{ my: 2, color: 'white', mr:'10px', pt:'9px',  
+                      ':hover': {bgcolor: '#ffffff', color: theme.palette.primary.main }}} >
                   {page}
                 </Button>
               ))}
@@ -118,7 +111,10 @@ const ResponsiveAppBar = () => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <Avatar
+                    sx={{ backgroundColor: 'common.white', color: theme.palette.primary.main, fontWeight: 'bold',
+                    '&:hover': { backgroundColor: theme.palette.avatarhover.main } }}
+                    alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                 </IconButton>
               </Tooltip>
 

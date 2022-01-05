@@ -13,15 +13,8 @@ import FormHelperText from '@mui/material/FormHelperText'
 import Radio from '@mui/material/Radio'
 import MenuItem from '@mui/material/MenuItem'
 import Select from '@mui/material/Select'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#025AA2'
-    }
-  }
-})
+import { ThemeProvider } from '@mui/material/styles'
+import theme from '../components/Theme'
 
 export default function Booking() {
 
@@ -58,15 +51,15 @@ export default function Booking() {
         <Header />
         <Box
           component="form" 
-          sx={{ '& .MuiTextField-root': { marginTop: 2 }, flexGrow: 1 }}
+          sx={{ '& .MuiTextField-root': { mt: 2 }, flexGrow: 1 }}
           onSubmit={onSubmit} >
           
-          <Typography variant='h5' sx = {{ paddingLeft: 5, paddingTop: 5, paddingBottom: 2, fontWeight: 'bold' }}>
+          <Typography variant='h5' sx = {{ pl: 5, pt: 5, pb: 2, fontWeight: 'bold' }}>
               Book a space
           </Typography>
 
           <Grid container spacing={0}>
-            <Grid item xs={12} sm={4} sx = {{ paddingLeft: 5, paddingTop: 2, paddingRight: 5 }}>
+            <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 2 }}>
               <Typography sx = {{fontWeight: 'bold'}}>
                 Reservation name
               </Typography>
@@ -78,12 +71,12 @@ export default function Booking() {
                 {...register("fullName", {required: true})} />
             </Grid>
 
-            <Grid item xs={12} sm={4} sx = {{ paddingLeft: 5, paddingTop: 2, paddingRight: 5 }}>
+            <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 2 }}>
               <Typography sx = {{ fontWeight: 'bold' }}>
                 Select a space
               </Typography>
               <Box sx={{ display: 'flex' }}>
-                <FormControl required component="fieldset" sx={{ m: 3, margin: 0 }} variant="standard">
+                <FormControl required component="fieldset" sx={{ m: 3, m: 0 }} variant="standard">
                   <RadioGroup aria-label="space" name="controlled-radio-buttons-group" value={value} 
                     onChange={handleChangeSpace}>
                     <FormControlLabel value="big_blue" control={<Radio />} label="Big Blue Co-Working Space" />
@@ -98,7 +91,7 @@ export default function Booking() {
               </Box>
             </Grid>
 
-            <Grid item xs={12} sm={4} sx = {{ paddingLeft: 5, paddingTop: 2, paddingRight: 5 }}>
+            <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 2 }}>
               <Typography sx = {{fontWeight: 'bold'}}>
                 Select the date
               </Typography>
@@ -111,8 +104,8 @@ export default function Booking() {
                 {...register("message", {required: true})} />
             </Grid>
 
-            <Grid item xs={12} sm={4} sx = {{ paddingLeft: 5, paddingTop: 2, paddingRight: 5 }}>
-              <Typography sx = {{fontWeight: 'bold', marginBottom: 2}}>
+            <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 2 }}>
+              <Typography sx = {{fontWeight: 'bold', mb: 2}}>
                 Select the starting time
               </Typography>
               <Box sx={{ minWidth: 120 }}>
@@ -149,8 +142,8 @@ export default function Booking() {
               </Box>
             </Grid>
 
-            <Grid item xs={12} sm={4} sx = {{ paddingLeft: 5, paddingTop: 2, paddingRight: 5 }}>
-              <Typography sx = {{ fontWeight: 'bold', marginBottom: 2 }}>
+            <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 2 }}>
+              <Typography sx = {{ fontWeight: 'bold', mb: 2 }}>
                 Select the duration 
               </Typography>
               <Box sx={{ minWidth: 120 }}>
@@ -171,8 +164,9 @@ export default function Booking() {
               </Box>
             </Grid>
 
-            <Grid item xs={12} sm={4} sx = {{ padding: 6 }}>
-              <Button type = 'submit' variant="contained" aria-label='Book space' sx = {{ fontSize: '22pt' }}>
+            <Grid item xs={12} sm={4} sx = {{ px: 5, py: 7 }}>
+              <Button type = 'submit' variant="contained" aria-label='Book space' 
+                sx = {{ height: 56, width: 100, fontSize: '12pt', '&:hover': { backgroundColor: theme.palette.btnhover.main } }}>
                 Book
               </Button>
             </Grid>

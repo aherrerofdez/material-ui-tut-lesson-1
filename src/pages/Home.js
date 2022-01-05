@@ -7,22 +7,15 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Link from '@mui/material/Link'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#025AA2'
-    }
-  }
-})
+import { ThemeProvider } from '@mui/material/styles'
+import theme from '../components/Theme'
 
 export default function Home() {
   return (
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Box sx={{ flexGrow: 1, marginTop: 5, marginLeft: 5, marginBottom: 2, marginRight: 5 }}>
+        <Box sx={{ flexGrow: 1, mt: 5, mx: 5, mb: 2 }}>
           
           <Grid container spacing={6}>
 
@@ -35,7 +28,7 @@ export default function Home() {
                 WorCo
               </Typography>
 
-              <Typography sx = {{ paddingTop: 5 }}>
+              <Typography sx = {{ pt: 5 }}>
                 We offer amazing co-working spaces that will meet everyone's needs. 
                 <br></br>
                 <br></br>
@@ -49,7 +42,7 @@ export default function Home() {
                     alt= 'Big Blue Co-Working Space'
                     loading="lazy"
                     width = {'100%'}
-                    sx = {{ marginTop: 5 }}
+                    sx = {{ mt: 5 }}
               />
             </Grid>
 
@@ -86,11 +79,11 @@ export default function Home() {
                 alt= 'Big Meeting Room'
                 loading="lazy"
                 width = {'100%'}
-                sx = {{ marginTop: 5 }} />
+                sx = {{ mt: 5 }} />
             </Grid>
 
             <Grid item xs={12} sm={6}>
-              <Typography variant='h5' sx = {{ verticalAlign: 'middle', marginBottom: 2 }}>
+              <Typography variant='h5' sx = {{ verticalAlign: 'middle', mb: 2 }}>
                 What we offer 
               </Typography>
 

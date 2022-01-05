@@ -3,15 +3,8 @@ import ImageListItem from '@mui/material/ImageListItem'
 import Grid from '@mui/material/Grid'
 import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#025AA2'
-    }
-  }
-})
+import { ThemeProvider } from '@mui/material/styles'
+import theme from '../components/Theme'
 
 const itemData = [
   {img: 'https://images.unsplash.com/photo-1600508774634-4e11d34730e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
@@ -32,7 +25,7 @@ export default function Booking() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Grid container spacing={0} sx = {{ marginBottom: 3 }}>
+        <Grid container spacing={0} sx = {{ mb: 3 }}>
             {itemData.map((item) => (
               <Grid item xs={12} sm={4} sx = {{ paddingLeft: 3, paddingRight: 3, paddingTop: 3 }}>
               <ImageListItem key={item.img}>

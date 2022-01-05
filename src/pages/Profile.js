@@ -14,15 +14,8 @@ import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#025AA2'
-    }
-  }
-})
+import { ThemeProvider } from '@mui/material/styles'
+import theme from '../components/Theme'
 
 export default function Profile() {
 
@@ -59,7 +52,7 @@ export default function Profile() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Box sx={{ flexGrow: 1, marginTop: 5, marginLeft: 5, marginBottom: 2, marginRight: 5 }}>
+        <Box sx={{ flexGrow: 1, mt: 5, mx: 5, mb: 2 }}>
           <Grid container spacing={6}>
             <Grid item xs={12} sm={3}>
                 <img
@@ -67,7 +60,7 @@ export default function Profile() {
                       alt= 'Your profile headshot'
                       loading="lazy"
                       width = {'100%'}
-                      sx = {{ marginTop: 5 }} />
+                      sx = {{ mt: 5 }} />
             </Grid>
 
             <Grid item xs={12} sm={6}>
@@ -75,22 +68,22 @@ export default function Profile() {
                 Personal information  
               </Typography>
 
-              <Typography sx = {{ paddingTop: 2 }} id = "name">
+              <Typography sx = {{ pt: 2 }} id = "name">
                 Name Surname
               </Typography>
 
-              <Typography sx = {{ paddingTop: 2 }}>
+              <Typography sx = {{ pt: 2 }}>
                 email@email.com
               </Typography>
 
-              <Typography sx = {{ paddingTop: 2 }}>
+              <Typography sx = {{ pt: 2 }}>
                 Example Street, 24, City, Country
               </Typography>
 
               <Button 
                     variant = "contained" 
                     onClick={handleClickOpenEdit} 
-                    sx = {{marginBottom: 5, marginTop: 4}}
+                    sx = {{ mb: 5, mt: 4, fontSize: '12pt', '&:hover': { backgroundColor: theme.palette.btnhover.main } }}
                     aria-label='Edit Personal Information'>
                 Edit
               </Button>
@@ -161,7 +154,7 @@ export default function Profile() {
 
               <Typography 
                   variant='h5' 
-                  sx = {{ fontWeight: 'bold', paddingTop: 2, paddingBottom: 2 }}>
+                  sx = {{ fontWeight: 'bold', py: 2 }}>
                 Payment methods
               </Typography>
 

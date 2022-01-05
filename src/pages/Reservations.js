@@ -14,15 +14,8 @@ import Typography from '@mui/material/Typography'
 import Paper from '@mui/material/Paper'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#025AA2'
-    }
-  }
-})
+import { ThemeProvider } from '@mui/material/styles'
+import theme from '../components/Theme'
 
 function Row(props) {
   const { row } = props
@@ -44,7 +37,7 @@ function Row(props) {
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box sx={{ margin: 1 }}>
+            <Box sx={{ m: 1 }}>
               <Typography variant="h6" gutterBottom component="div">
                 Reservation Details
               </Typography>
@@ -111,9 +104,15 @@ export default function Reservations() {
             <TableHead>
               <TableRow>
                 <TableCell />
-                <TableCell> Reservation ID </TableCell>
-                <TableCell> Space </TableCell>
-                <TableCell> Date </TableCell>
+                <TableCell>
+                  <Typography variant='h6'> Reservation ID </Typography>
+                </TableCell>
+                <TableCell>
+                  <Typography variant='h6'> Space </Typography>
+                </TableCell>
+                <TableCell> 
+                  <Typography variant='h6'> Date </Typography>
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
