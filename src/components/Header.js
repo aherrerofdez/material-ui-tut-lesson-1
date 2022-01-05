@@ -40,7 +40,7 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Displays LOGO in desktop version */}
-          <Link href="/">
+          <Link key="home" href="/">
             <Typography
               variant="h6"
               color="common.white"
@@ -88,8 +88,8 @@ const ResponsiveAppBar = () => {
               sx={{ display: { xs: 'block', md: 'none' } }} >
           
               {pages.map((page) => (
-                <Link href={page.toLowerCase().replace(/\s/g, '-')}>
-                  <MenuItem key={page} onClick={handleCloseNavMenu} >
+                <Link key={page} href={page.toLowerCase().replace(/\s/g, '-')}>
+                  <MenuItem onClick={handleCloseNavMenu} >
                     <Typography textAlign="center"> {page} </Typography>
                   </MenuItem>
                 </Link>
@@ -98,7 +98,7 @@ const ResponsiveAppBar = () => {
           </Box>
 
           {/* Displays LOGO in mobile version */}
-          <Link href="/" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
+          <Link key="home-mobile" href="/" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
             <Typography variant="h6" color="common.white" noWrap component="div">
               LOGO
             </Typography>
@@ -123,8 +123,8 @@ const ResponsiveAppBar = () => {
               onClose={handleCloseUserMenu} >
 
               {settings.map((setting) => (
-                <Link href={setting.toLowerCase().replace(/\s/g, '-')}>
-                  <MenuItem key={setting} onClick={handleCloseNavMenu}>
+                <Link key={setting} href={setting.toLowerCase().replace(/\s/g, '-')}>
+                  <MenuItem onClick={handleCloseNavMenu}>
                     <Typography textAlign="center"> {setting} </Typography>
                   </MenuItem>
                 </Link>
