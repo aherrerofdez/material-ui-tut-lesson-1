@@ -15,22 +15,6 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-const columns = [
-  { field: 'id', headerName: 'ID' },
-  { field: 'city', headerName: 'City'},
-  { field: 'address', headerName: 'address'},
-  { field: 'numberOfSpaces', headerName: 'Number of spaces', type: 'number'}
-];
-
-const rows = [
-  { id: 1, city: 'Madrid', address: 'Calle de Henares', numberOfSpaces: 20},
-  { id: 2, city: 'Madrid', address: 'Calle de Churruca', numberOfSpaces: 12},
-  { id: 3, city: 'Madrid', address: 'Glorieta de Caballeros', numberOfSpaces: 8},
-  { id: 4, city: 'Getafe', address: 'Calle de la Luz', numberOfSpaces: 20},
-  { id: 5, city: 'Getafe', address: 'Calle de Velazquez', numberOfSpaces: 10},
-  
-];
-
 export default function Profile() {
 
   {/*dialog to confirm submission of message*/}
@@ -84,7 +68,7 @@ export default function Profile() {
           <Grid item xs={12} sm={6}>
             <Typography 
                 variant='h5' 
-                sx = {{ffontWeight: 'bold'}}
+                sx = {{fontWeight: 'bold'}}
             >
               Personal information  
             </Typography>
@@ -107,7 +91,6 @@ export default function Profile() {
             <Button 
                   variant = "contained" 
                   onClick={handleClickOpenEdit} 
-                  autoFocus 
                   sx = {{marginBottom: 5, marginTop: 4}}
                   aria-label='Edit Personal Information'
             >
@@ -164,7 +147,7 @@ export default function Profile() {
                     id="address_textfield"
                     placeholder="Address"
                     fullWidth
-                    {...register("email")}                                           
+                    {...register("address")}                                           
                   />
 
                 </DialogContent>
