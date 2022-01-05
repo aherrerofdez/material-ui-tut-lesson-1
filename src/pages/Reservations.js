@@ -14,6 +14,15 @@ import Typography from '@mui/material/Typography'
 import Paper from '@mui/material/Paper'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#025AA2'
+    }
+  }
+})
 
 function Row(props) {
   const { row } = props
@@ -95,24 +104,26 @@ export default function Reservations() {
 
   return (
     <>
-      <Header />
-      <TableContainer component={Paper}>
-      <Table aria-label="collapsible table with your reservations">
-        <TableHead>
-          <TableRow>
-            <TableCell />
-            <TableCell> Reservation ID </TableCell>
-            <TableCell> Space </TableCell>
-            <TableCell> Date </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <Row key={row.name} row={row} />
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+      <ThemeProvider theme={theme}>
+        <Header />
+        <TableContainer component={Paper}>
+          <Table aria-label="collapsible table with your reservations">
+            <TableHead>
+              <TableRow>
+                <TableCell />
+                <TableCell> Reservation ID </TableCell>
+                <TableCell> Space </TableCell>
+                <TableCell> Date </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <Row key={row.name} row={row} />
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </ThemeProvider>
     </>
   )
 }
