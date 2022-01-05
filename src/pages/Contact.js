@@ -88,19 +88,23 @@ export default function Contact() {
             </Grid>
 
             <Grid item xs={12} sx = {{ mx: 5, mb: 5 }}>
-              <Button href="https://www.instagram.com/accounts/login/" aria-label='Instagram'>
+              <Button href="https://www.instagram.com/accounts/login/" aria-label='Instagram'
+                sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
                 <InstagramIcon fontSize="large"/>
               </Button>
 
-              <Button href="https://m.facebook.com/home.php" aria-label='Facebook'>
+              <Button href="https://m.facebook.com/home.php" aria-label='Facebook'
+                sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
                 <FacebookIcon fontSize="large" />
               </Button>
 
-              <Button href="https://www.linkedin.com/" aria-label='LinkedIn'>
+              <Button href="https://www.linkedin.com/" aria-label='LinkedIn'
+                sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
                 <LinkedInIcon fontSize="large" />
               </Button>
 
-              <Button href="https://mobile.twitter.com/login" aria-label='Twitter'>
+              <Button href="https://mobile.twitter.com/login" aria-label='Twitter'
+                sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
                 <TwitterIcon fontSize="large" />
               </Button>
             </Grid>

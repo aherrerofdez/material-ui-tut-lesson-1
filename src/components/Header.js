@@ -113,7 +113,7 @@ const ResponsiveAppBar = () => {
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar
                     sx={{ backgroundColor: 'common.white', color: theme.palette.primary.main, fontWeight: 'bold',
-                    '&:hover': { backgroundColor: theme.palette.avatarhover.main } }}
+                    '&:hover': { backgroundColor: theme.palette.btnhoverlight.main } }}
                     alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                 </IconButton>
               </Tooltip>
@@ -130,7 +130,8 @@ const ResponsiveAppBar = () => {
 
                 {settings.map((setting) => (
                   <Link key={setting} href={setting.toLowerCase().replace(/\s/g, '-')}>
-                    <MenuItem onClick={handleCloseNavMenu}>
+                    <MenuItem onClick={handleCloseNavMenu} 
+                      sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
                       <Typography textAlign="center"> {setting} </Typography>
                     </MenuItem>
                   </Link>

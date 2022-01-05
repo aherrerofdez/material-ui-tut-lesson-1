@@ -8,7 +8,7 @@ const theme = createTheme({
         btnhover: {
         main: '#022440'
         },
-        avatarhover: {
+        btnhoverlight: {
             main: '#F0F0F0'
         }
     }

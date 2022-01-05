@@ -136,7 +136,8 @@ export default function Profile() {
                   </DialogContent>
                   
                   <DialogActions>
-                    <Button onClick={handleCloseEdit} autoFocus aria-label='Cancel'>
+                    <Button onClick={handleCloseEdit} autoFocus aria-label='Cancel'
+                      sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
                       Cancel
                     </Button>
 
@@ -145,7 +146,8 @@ export default function Profile() {
                         variant = "contained" 
                         onClick={handleCloseEdit} 
                         autoFocus
-                        aria-label='Update Information'>
+                        aria-label='Update Information'
+                        sx = {{ '&:hover': { backgroundColor: theme.palette.btnhover.main } }}>
                       Update
                     </Button>
                   </DialogActions>
@@ -198,7 +200,8 @@ export default function Profile() {
                   <Button 
                       onClick={handleClose} 
                       autoFocus
-                      aria-label='Close payment methods dialog'>
+                      aria-label='Close payment methods dialog'
+                      sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
                     Close
                   </Button>
                 </DialogActions>
