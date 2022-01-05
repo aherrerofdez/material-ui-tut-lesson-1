@@ -84,29 +84,31 @@ export default function Contact() {
             </Button>
           </Grid>
 
-          <Grid item xs={12} sx = {{ marginLeft: 5, marginTop: 2, marginRight: 5 }}>
-            <Typography variant='h6' sx = {{ marginBottom: 2, marginTop: 5, fontWeight: 'bold' }}>
-              Find us on social media: 
-            </Typography>
-          </Grid>
+          <Box>
+            <Box sx = {{ marginLeft: 5, marginTop: 2, marginRight: 5 }}>
+              <Typography variant='h6' sx = {{ marginBottom: 2, marginTop: 5, fontWeight: 'bold' }}>
+                Find us on social media 
+              </Typography>
+            </Box>
 
-          <Grid item xs={12} sx = {{ marginLeft: 5, marginRight: 5, marginBottom: 5 }}>
-            <Button href="https://www.instagram.com/accounts/login/" aria-label='Instagram'>
-              <InstagramIcon fontSize="large"/>
-            </Button>
+            <Box sx = {{ marginLeft: 5, marginRight: 3, marginBottom: 5 }}>
+              <Button href="https://www.instagram.com/accounts/login/" aria-label='Instagram'>
+                <InstagramIcon fontSize="large"/>
+              </Button>
 
-            <Button href="https://m.facebook.com/home.php" aria-label='Facebook'>
-              <FacebookIcon fontSize="large" />
-            </Button>
+              <Button href="https://m.facebook.com/home.php" aria-label='Facebook'>
+                <FacebookIcon fontSize="large" />
+              </Button>
 
-            <Button href="https://www.linkedin.com/" aria-label='LinkedIn'>
-              <LinkedInIcon fontSize="large" />
-            </Button>
+              <Button href="https://www.linkedin.com/" aria-label='LinkedIn'>
+                <LinkedInIcon fontSize="large" />
+              </Button>
 
-            <Button href="https://mobile.twitter.com/login" aria-label='Twitter'>
-              <TwitterIcon fontSize="large" />
-            </Button>
-          </Grid>
+              <Button href="https://mobile.twitter.com/login" aria-label='Twitter'>
+                <TwitterIcon fontSize="large" />
+              </Button>
+            </Box>
+          </Box>
         </Grid>
       </Box>
     </>

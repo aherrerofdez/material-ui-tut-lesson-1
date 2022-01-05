@@ -16,8 +16,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 
 function Row(props) {
-  const { row } = props;
-  const [open, setOpen] = React.useState(false);
+  const { row } = props
+  const [open, setOpen] = React.useState(false)
 
   return (
     <React.Fragment>
@@ -40,7 +40,7 @@ function Row(props) {
                 Reservation Details
               </Typography>
 
-              <Table size="small" aria-label="purchases">
+              <Table size="small" aria-label="reservation details">
                 <TableHead>
                   <TableRow>
                     <TableCell> Customer </TableCell>
@@ -66,7 +66,7 @@ function Row(props) {
         </TableCell>
       </TableRow>
     </React.Fragment>
-  );
+  )
 }
 
 Row.propTypes = {
@@ -81,7 +81,7 @@ Row.propTypes = {
         duration: PropTypes.string.isRequired,
         price: PropTypes.string.isRequired
       })).isRequired})
-  .isRequired};
+  .isRequired}
 
 const rows = [
   {name: 'Team Meeting', space: 'Big Blue', date: '12-01-2022', details:
@@ -89,7 +89,7 @@ const rows = [
   {name: 'Meeting with VC', space: 'Big Meeting Room', date: '14-01-2022', details:
   [{customerId: 11091700, time: '12:00', duration: '30 min', price: '45€'}]},
   {name: 'Call with Developer', space: 'Small Meeting Room', date: '17-01-2022', details:
-    [{customerId: 11091700, time: '11:15', duration: '1 hour', price: '65€'}]}];
+    [{customerId: 11091700, time: '11:30', duration: '1 hour', price: '65€'}]}]
 
 export default function Reservations() {
 
@@ -97,7 +97,7 @@ export default function Reservations() {
     <>
       <Header />
       <TableContainer component={Paper}>
-      <Table aria-label="collapsible table">
+      <Table aria-label="collapsible table with your reservations">
         <TableHead>
           <TableRow>
             <TableCell />
