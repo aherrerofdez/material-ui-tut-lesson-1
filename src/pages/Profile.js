@@ -1,82 +1,61 @@
 import React from 'react'
 import Header from '../components/Header'
-import { styled } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import { Button, CardActionArea, CardActions } from '@mui/material';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-
-const columns = [
-  { field: 'id', headerName: 'ID' },
-  { field: 'city', headerName: 'City'},
-  { field: 'address', headerName: 'address'},
-  { field: 'numberOfSpaces', headerName: 'Number of spaces', type: 'number'}
-];
-
-const rows = [
-  { id: 1, city: 'Madrid', address: 'Calle de Henares', numberOfSpaces: 20},
-  { id: 2, city: 'Madrid', address: 'Calle de Churruca', numberOfSpaces: 12},
-  { id: 3, city: 'Madrid', address: 'Glorieta de Caballeros', numberOfSpaces: 8},
-  { id: 4, city: 'Getafe', address: 'Calle de la Luz', numberOfSpaces: 20},
-  { id: 5, city: 'Getafe', address: 'Calle de Velazquez', numberOfSpaces: 10},
-  
-];
+import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
+import Grid from '@mui/material/Grid'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import CardMedia from '@mui/material/CardMedia'
+import { Button, CardActionArea } from '@mui/material'
+import Dialog from '@mui/material/Dialog'
+import DialogActions from '@mui/material/DialogActions'
+import DialogContent from '@mui/material/DialogContent'
+import DialogContentText from '@mui/material/DialogContentText'
+import DialogTitle from '@mui/material/DialogTitle'
 
 export default function Profile() {
-
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
 
   const handleClickOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleClose = () => {
-    setOpen(false);
-    window.location.reload(true);
-  };
+    setOpen(false)
+    window.location.reload(true)
+  }
 
   return (
     <>
       <Header />
 
-      <Box sx={{ flexGrow: 1, marginTop: 5, marginLeft: 5, 
-            marginBottom: 2, marginRight: 5}}>
+      <Box sx={{ flexGrow: 1, marginTop: 5, marginLeft: 5, marginBottom: 2, marginRight: 5 }}>
 
         <Grid container spacing={6}>
 
-        <Grid item xs={12} sm={3}>
+          <Grid item xs={12} sm={3}>
             <img
-                  src='https://images.unsplash.com/photo-1608831540955-35094d48694a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=526&q=80'
-                  alt= 'Profile picture'
-                  loading="lazy"
-                  width = {'100%'}
-                  sx = {{marginTop: 5}}
-            />
+              src='https://images.unsplash.com/photo-1608831540955-35094d48694a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=526&q=80'
+              alt='Profile picture'
+              loading="lazy"
+              width={'100%'}
+              sx={{ marginTop: 5 }} />
           </Grid>
 
           <Grid item xs={12} sm={6}>
-            <Typography variant='h5' sx = {{fontFamily: 'montserrat', fontWeight: 'bold'}}>
-              Name Surname  
+            <Typography variant='h5' sx={{ fontWeight: 'bold' }}>
+              Name Surname
             </Typography>
 
-            <Typography sx = {{paddingTop: 2}}>
+            <Typography sx={{ paddingTop: 2 }}>
               email@email.com
             </Typography>
 
-            <Typography sx = {{paddingTop: 2}}>
+            <Typography sx={{ paddingTop: 2 }}>
               Example Street, 24, City, Country
             </Typography>
 
-            <Typography variant = 'h6'sx = {{paddingTop: 2}}>
+            <Typography variant='h6' sx={{ paddingTop: 2 }}>
               Payment methods
             </Typography>
 
@@ -86,8 +65,8 @@ export default function Profile() {
                   component="img"
                   height="140"
                   src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                  alt="Credit card image"
-                />
+                  alt="Credit card image"/>
+
                 <CardContent>
                   <Typography gutterBottom variant="h6" component="div">
                     MasterCard
@@ -96,6 +75,7 @@ export default function Profile() {
                     Prepaid xxxxxx098
                   </Typography>
                 </CardContent>
+
               </CardActionArea>
             </Card>
 
@@ -103,29 +83,27 @@ export default function Profile() {
               open={open}
               onClose={handleClose}
               aria-labelledby="alert-dialog-title"
-              aria-describedby="alert-dialog-description"
-            >
+              aria-describedby="alert-dialog-description">
+
               <DialogTitle id="alert-dialog-title">
                 {"MasterCard xxxxxx098"}
               </DialogTitle>
+
               <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                  This is your present payment method. Changing it is currently not supported. 
+                  This is your present payment method. Changing it is currently not supported.
                 </DialogContentText>
               </DialogContent>
+
               <DialogActions>
                 <Button onClick={handleClose} autoFocus>
                   Close
                 </Button>
               </DialogActions>
             </Dialog>
-
-                               
           </Grid>
-        
         </Grid>
-      </Box>     
-
+      </Box>
     </>
   )
 }

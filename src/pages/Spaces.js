@@ -1,31 +1,8 @@
 import Header from '../components/Header'
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import Box from '@mui/material/Box';
-
-export default function Booking() {
-  return (
-    <>
-      <Header />
-      <Box>
-        <ImageList variant="masonry" cols={3} gap={8} sx = {{marginTop: 5, marginLeft: 5, marginBottom: 2, marginRight: 5}}>
-          {itemData.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}?w=248&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-              />
-              <ImageListItemBar position="below" title={item.title} />
-            </ImageListItem>
-          ))}
-        </ImageList>
-      </Box>
-    </>
-  );
-}
+import ImageListItem from '@mui/material/ImageListItem'
+import Grid from '@mui/material/Grid'
+import Link from '@mui/material/Link'
+import Typography from '@mui/material/Typography'
 
 const itemData = [
   {img: 'https://images.unsplash.com/photo-1600508774634-4e11d34730e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
@@ -39,5 +16,31 @@ const itemData = [
   {img: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80',
     title: 'Big Meeting Room'},
   {img: 'https://images.unsplash.com/photo-1532916123995-50bad0fc528e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-    title: 'Small Meeting Room'},
-];
+    title: 'Small Meeting Room'}]
+
+export default function Booking() {
+  return (
+    <>
+      <Header />
+      <Grid container spacing={0} sx = {{ marginBottom: 3 }}>
+          {itemData.map((item) => (
+            <Grid item xs={12} sm={4} sx = {{ paddingLeft: 3, paddingRight: 3, paddingTop: 3 }}>
+            <ImageListItem key={item.img}>
+              <img
+                src={`${item.img}?w=248&fit=crop&auto=format`}
+                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                alt={item.title}
+                loading= 'lazy' />
+            </ImageListItem>
+            <Typography sx = {{ fontWeight: 'bold', fontSize: '18pt', textAlign: 'center' }}>
+              {item.title} 
+            </Typography>
+            <Typography sx = {{ fontSize: '16pt', textAlign: 'center' }}>
+              <Link href="/booking" sx = {{ fontWeight: 'bold' }}>Book</Link> this space now.
+            </Typography>
+            </Grid>
+          ))}
+      </Grid>
+    </>
+  )
+}
