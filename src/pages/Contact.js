@@ -13,6 +13,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import { ThemeProvider } from '@mui/material/styles'
 import theme from '../components/Theme'
+import Tooltip from '@mui/material/Tooltip'
 
 export default function Contact() {
 
@@ -93,26 +94,34 @@ export default function Contact() {
               </Typography>
             </Grid>
 
-            <Grid item xs={12} sx = {{ mx: 5, mb: 5 }}>
-              <Button href="https://www.instagram.com/accounts/login/" aria-label='Instagram'
-                sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                <InstagramIcon fontSize="large"/>
-              </Button>
+            <Grid item xs={12} sx = {{ mx: 5, mb: 10 }}>
+              <Tooltip title="Instagram">
+                <Button href="https://www.instagram.com/accounts/login/" aria-label='Instagram'
+                  sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
+                  <InstagramIcon fontSize="large"/>
+                </Button>
+              </Tooltip>
 
-              <Button href="https://m.facebook.com/home.php" aria-label='Facebook'
-                sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                <FacebookIcon fontSize="large" />
-              </Button>
+              <Tooltip title="Facebook">
+                <Button href="https://m.facebook.com/home.php" aria-label='Facebook'
+                  sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
+                  <FacebookIcon fontSize="large" />
+                </Button>
+              </Tooltip>
 
-              <Button href="https://www.linkedin.com/" aria-label='LinkedIn'
-                sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                <LinkedInIcon fontSize="large" />
-              </Button>
+              <Tooltip title="Linkedin">
+                <Button href="https://www.linkedin.com/" aria-label='LinkedIn'
+                  sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
+                  <LinkedInIcon fontSize="large" />
+                </Button>
+              </Tooltip>
 
-              <Button href="https://mobile.twitter.com/login" aria-label='Twitter'
-                sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                <TwitterIcon fontSize="large" />
-              </Button>
+              <Tooltip title="Twitter">
+                <Button href="https://mobile.twitter.com/login" aria-label='Twitter'
+                  sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
+                  <TwitterIcon fontSize="large" />
+                </Button>
+                </Tooltip>
             </Grid>
           </Grid>
         </Box>

@@ -47,16 +47,19 @@ const ResponsiveAppBar = () => {
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             {/* Displays LOGO in desktop version */}
-            <Link key="home" href="/">
-              <Typography
-                variant="h6"
-                color="common.white"
-                noWrap
-                component="div"
-                sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }} >
-                WorCo
-              </Typography>
-            </Link>
+            <Tooltip title="Home">
+              <Link title="home" key="home" href="/">
+                <Typography
+                  variant="h6"
+                  color="common.white"
+                  noWrap
+                  component="div"
+                  sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, 
+                    '&:hover': {textDecoration: 'underline', textUnderlineOffset: '0.2em' } }} >
+                  WorCo
+                </Typography>
+              </Link>
+            </Tooltip>
 
             {/* Displays MENU in desktop version */}
             <Box sx={{ flexGrow: 1, display: { xs:'none', md:'flex' }, ml:'10px'}}>
@@ -66,7 +69,7 @@ const ResponsiveAppBar = () => {
                   onClick={handleCloseNavMenu}
                   href={page.toLowerCase().replace(/\s/g, '-')}
                   sx={{ my: 2, color: 'white', mr:'10px', pt:'9px',  
-                      ':hover': {bgcolor: '#ffffff', color: theme.palette.primary.main }}} >
+                      '&:hover': {bgcolor: '#ffffff', color: theme.palette.primary.main }}} >
                   {page}
                 </Button>
               ))}
@@ -74,15 +77,18 @@ const ResponsiveAppBar = () => {
 
             {/* Displays MENU in mobile version */}
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit" >
-                <MenuIcon />
-              </IconButton>
+              <Tooltip title="Open menu">
+                <IconButton
+                  size="large"
+                  title="open menu"
+                  aria-label="menu"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleOpenNavMenu}
+                  color="inherit" >
+                  <MenuIcon />
+                </IconButton>
+              </Tooltip>
 
               <Menu
                 id="menu-appbar"
@@ -106,26 +112,32 @@ const ResponsiveAppBar = () => {
             </Box>
 
             {/* Displays LOGO in mobile version */}
-            <Link key="home-mobile" href="/" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
-              <Typography variant="h6" color="common.white" noWrap component="div">
-                WorCo
-              </Typography>
-            </Link>
+            <Tooltip title="Home">
+              <Link title="home" key="home-mobile" href="/" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
+                <Typography variant="h6" color="common.white" noWrap component="div">
+                  WorCo
+                </Typography>
+              </Link>
+            </Tooltip>
 
             {/* Displays SETTINGS in desktop and mobile version */}
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar
-                    sx={{ backgroundColor: 'common.white', color: theme.palette.primary.main, fontWeight: 'bold',
-                    '&:hover': { backgroundColor: theme.palette.btnhoverlight.main } }}
-                    alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <IconButton 
+                  title="open settings"
+                  aria-label="settings"
+                  aria-controls="settings-appbar"
+                  aria-haspopup="true"
+                  onClick={handleOpenUserMenu}
+                  sx={{ p: 1 }}>
+                  <Avatar sx={{ backgroundColor: 'common.white', color: theme.palette.primary.main, fontWeight: 'bold',
+                    '&:hover': { backgroundColor: theme.palette.btnhoverlight.main } }} />
                 </IconButton>
               </Tooltip>
 
               <Menu
                 sx={{ mt: '45px' }}
-                id="menu-appbar"
+                id="settings-appbar"
                 anchorEl={anchorElUser}
                 anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
                 keepMounted

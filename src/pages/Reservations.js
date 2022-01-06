@@ -16,6 +16,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { ThemeProvider } from '@mui/material/styles'
 import theme from '../components/Theme'
+import Tooltip from '@mui/material/Tooltip'
 
 function Row(props) {
   const { row } = props
@@ -25,9 +26,11 @@ function Row(props) {
     <React.Fragment>
       <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
         <TableCell>
-          <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
-            {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-          </IconButton>
+          <Tooltip title="Details">
+            <IconButton aria-label="open reservation details" size="small" onClick={() => setOpen(!open)}>
+              {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+            </IconButton>
+          </Tooltip>
         </TableCell>
         <TableCell component="th" scope="row"> {row.name} </TableCell>
         <TableCell> {row.space} </TableCell>
