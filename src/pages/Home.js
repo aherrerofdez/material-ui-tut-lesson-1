@@ -18,7 +18,7 @@ export default function Home() {
         <Box id="main-content" sx={{ flexGrow: 1, mt: 5, mx: 5, mb: 2 }}>
           <Grid container spacing={6}>
             <Grid item xs={12} sm={6}>
-              <Typography variant='h5' sx = {{ verticalAlign: 'middle' }}>
+              <Typography sx = {{ verticalAlign: 'middle', fontSize: '18pt' }}>
                 Welcome to  
               </Typography>
 
