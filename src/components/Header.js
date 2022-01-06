@@ -39,6 +39,10 @@ const ResponsiveAppBar = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <Link href="#main-content" sx={{ left:'-999px', position:'absolute',
+        '&:focus': { color: '#fff', backgroundColor:'#000', left: 'auto', top: 'auto',
+          width: '20%', height: 'auto', overflow:'auto', my: '20px', mx: '40%', p:'5px', borderRadius: '5px',
+          textAlign:'center'}}}> Skip to content </Link>
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>

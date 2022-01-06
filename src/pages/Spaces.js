@@ -25,7 +25,7 @@ export default function Booking() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Grid container spacing={0} sx = {{ mb: 3 }}>
+        <Grid id="main-content"  container spacing={0} sx = {{ mb: 3 }}>
             {itemData.map((item) => (
               <Grid item xs={12} sm={4} sx = {{ paddingLeft: 3, paddingRight: 3, paddingTop: 3 }}>
               <ImageListItem key={item.img}>

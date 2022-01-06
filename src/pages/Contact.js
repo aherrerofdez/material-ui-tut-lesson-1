@@ -26,7 +26,7 @@ export default function Contact() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Box 
+        <Box id="main-content"
             component="form"
             sx={{ '& .MuiTextField-root': { mt: 2 }, flexGrow: 1 }}
             onSubmit={onSubmit} >

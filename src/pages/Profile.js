@@ -52,7 +52,7 @@ export default function Profile() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Box sx={{ flexGrow: 1, mt: 5, mx: 5, mb: 2 }}>
+        <Box id="main-content" sx={{ flexGrow: 1, mt: 5, mx: 5, mb: 2 }}>
           <Grid container spacing={6}>
             <Grid item xs={12} sm={3}>
                 <img

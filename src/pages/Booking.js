@@ -22,14 +22,14 @@ import DatePicker from '@mui/lab/DatePicker'
 export default function Booking() {
 
   /* spaces radiobuttons*/
-  const [space, setSpace] = React.useState('big_blue')
+  const [space, setSpace] = React.useState('')
 
   const handleChangeSpace = (event) => {
     setSpace(event.target.value)
   }
 
   /* handling the date picker */
-  const [date, setDate] = React.useState(null);
+  const [date, setDate] = React.useState('');
 
   /*basic selection for time and duration*/
   const [time, setTime] = React.useState('')
@@ -55,7 +55,7 @@ export default function Booking() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Box
+        <Box id="main-content"
           component="form" 
           sx={{ '& .MuiTextField-root': { mt: 2 }, flexGrow: 1 }}
           onSubmit={onSubmit} >
@@ -83,7 +83,7 @@ export default function Booking() {
               </Typography>
               <Box sx={{ display: 'flex' }}>
                 <FormControl required component="fieldset" sx={{ m: 3, m: 0 }} variant="standard">
-                  <RadioGroup aria-label="space" name="controlled-radio-buttons-group" value={space} 
+                  <RadioGroup aria-label="space" name="space" value={space} 
                     onChange={handleChangeSpace}>
                     <FormControlLabel value="big_blue" control={<Radio />} label="Big Blue Co-Working Space" />
                     <FormControlLabel value="plants" control={<Radio />} label="Plants Co-Working Space" />
@@ -92,7 +92,7 @@ export default function Booking() {
                     <FormControlLabel value="big_meeting" control={<Radio />} label="Big Meeting Room" />
                     <FormControlLabel value="small_meeting" control={<Radio />} label="Small Meeting Room" />
                   </RadioGroup>
-                  <FormHelperText>Required*</FormHelperText>
+                  <FormHelperText> Required* </FormHelperText>
                 </FormControl>
               </Box>
             </Grid>
@@ -103,11 +103,12 @@ export default function Booking() {
               </Typography>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker
-                  required
                   value={date}
-                  sx = {{ color: theme.palette.primary.main }}
                   onChange={(newValue) => { setDate(newValue) }}
-                  renderInput={(params) => <TextField {...params} />}/>
+                  inputProps={{ 'aria-label': 'required date', 'aria-describedby': 'date picker', 'aria-invalid': false }}
+                  renderInput={params => <TextField {...params} required helperText="Required*"
+                    placeholder='dd-mm-yyyy' 
+                    />}/>
               </LocalizationProvider>
             </Grid>
 

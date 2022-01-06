@@ -15,10 +15,8 @@ export default function Home() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Box sx={{ flexGrow: 1, mt: 5, mx: 5, mb: 2 }}>
-          
+        <Box id="main-content" sx={{ flexGrow: 1, mt: 5, mx: 5, mb: 2 }}>
           <Grid container spacing={6}>
-
             <Grid item xs={12} sm={6}>
               <Typography variant='h5' sx = {{ verticalAlign: 'middle' }}>
                 Welcome to  
@@ -42,8 +40,7 @@ export default function Home() {
                     alt= 'Big Blue Co-Working Space'
                     loading="lazy"
                     width = {'100%'}
-                    sx = {{ mt: 5 }}
-              />
+                    sx = {{ mt: 5 }} />
             </Grid>
 
             <Grid item xs={12} sm={4}>
