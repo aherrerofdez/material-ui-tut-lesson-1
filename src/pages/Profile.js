@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
@@ -18,6 +18,11 @@ import { ThemeProvider } from '@mui/material/styles'
 import theme from '../components/Theme'
 
 export default function Profile() {
+
+  /* change webpage title */
+  useEffect(() => {
+    document.title = "WorCo: Your profile"
+  }, [])
 
   /*dialog to confirm submission of message*/
   const [open, setOpen] = React.useState(false);

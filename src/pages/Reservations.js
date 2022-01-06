@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import PropTypes from 'prop-types'
 import Box from '@mui/material/Box'
@@ -94,6 +94,11 @@ const rows = [
     [{customerId: 11091700, time: '11:30', duration: '1 hour', price: '65€'}]}]
 
 export default function Reservations() {
+
+  /* change webpage title */
+  useEffect(() => {
+    document.title = "WorCo: Your reservations"
+  }, [])
 
   return (
     <>

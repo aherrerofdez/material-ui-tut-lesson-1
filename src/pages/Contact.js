@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Header from '../components/Header'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
@@ -14,6 +15,11 @@ import { ThemeProvider } from '@mui/material/styles'
 import theme from '../components/Theme'
 
 export default function Contact() {
+
+  /* change webpage title */
+  useEffect(() => {
+    document.title = "WorCo: Contact us"
+  }, [])
   
   /*data registration and validation*/
   const { register } = useForm()

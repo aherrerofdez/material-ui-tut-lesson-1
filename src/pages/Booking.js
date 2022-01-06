@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
@@ -21,6 +21,11 @@ import DatePicker from '@mui/lab/DatePicker'
 import TimePicker from '@mui/lab/TimePicker';
 
 export default function Booking() {
+
+  /* change webpage title */
+  useEffect(() => {
+    document.title = "WorCo: Booking a space"
+  }, [])
 
   /* spaces radiobuttons */
   const [space, setSpace] = React.useState('')

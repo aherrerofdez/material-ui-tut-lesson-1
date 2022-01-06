@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Header from '../components/Header'
 import ImageListItem from '@mui/material/ImageListItem'
 import Grid from '@mui/material/Grid'
@@ -21,6 +22,12 @@ const itemData = [
     title: 'Small Meeting Room'}]
 
 export default function Booking() {
+
+  /* change webpage title */
+  useEffect(() => {
+    document.title = "WorCo: Available spaces"
+  }, [])
+
   return (
     <>
       <ThemeProvider theme={theme}>
