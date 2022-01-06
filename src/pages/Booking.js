@@ -108,7 +108,8 @@ export default function Booking() {
                 <DatePicker
                   value={date}
                   onChange={(newValue) => { setDate(newValue) }}
-                  inputProps={{ 'aria-label': 'required date', 'aria-describedby': 'date picker', 'aria-invalid': false }}
+                  onError={() => {setDate('')}}
+                  inputProps={{ 'aria-label': 'required date', 'aria-describedby': 'date picker' }}
                   renderInput={params => <TextField {...params} required helperText="Required*" {...register("date")} />}/>
               </LocalizationProvider>
             </Grid>
@@ -121,7 +122,7 @@ export default function Booking() {
                 <TimePicker 
                   value={time}
                   onChange={setTime}
-                  inputProps={{ 'aria-label': 'required date', 'aria-describedby': 'date picker' }}
+                  inputProps={{ 'aria-label': 'required time', 'aria-describedby': 'time picker' }}
                   renderInput={(params) => <TextField {...params} 
                     required fullWidth helperText="Required*" {...register("time")}/>} />
               </LocalizationProvider>
