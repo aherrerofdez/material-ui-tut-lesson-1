@@ -82,15 +82,15 @@ export default function Booking() {
                 Select a space
               </Typography>
               <Box sx={{ display: 'flex' }}>
-                <FormControl required component="fieldset" sx={{ m: 3, m: 0 }} variant="standard">
+                <FormControl required component="fieldset" sx={{ mt: '5px', mb: 2 }} variant="standard">
                   <RadioGroup aria-label="space" name="space" value={space} 
                     onChange={handleChangeSpace}>
-                    <FormControlLabel value="big_blue" control={<Radio />} label="Big Blue Co-Working Space" />
-                    <FormControlLabel value="plants" control={<Radio />} label="Plants Co-Working Space" />
-                    <FormControlLabel value="small_space" control={<Radio />} label="Small Co-Working Space" />
-                    <FormControlLabel value="open_space" control={<Radio />} label="Open Co-Working Space" />
-                    <FormControlLabel value="big_meeting" control={<Radio />} label="Big Meeting Room" />
-                    <FormControlLabel value="small_meeting" control={<Radio />} label="Small Meeting Room" />
+                    <FormControlLabel value="big_blue" control={<Radio required={true}/>} label="Big Blue Co-Working Space" />
+                    <FormControlLabel value="plants" control={<Radio required={true}/>} label="Plants Co-Working Space" />
+                    <FormControlLabel value="small_space" control={<Radio required={true}/>} label="Small Co-Working Space" />
+                    <FormControlLabel value="open_space" control={<Radio required={true}/>} label="Open Co-Working Space" />
+                    <FormControlLabel value="big_meeting" control={<Radio required={true}/>} label="Big Meeting Room" />
+                    <FormControlLabel value="small_meeting" control={<Radio required={true}/>} label="Small Meeting Room" />
                   </RadioGroup>
                   <FormHelperText> Required* </FormHelperText>
                 </FormControl>
@@ -107,7 +107,7 @@ export default function Booking() {
                   onChange={(newValue) => { setDate(newValue) }}
                   inputProps={{ 'aria-label': 'required date', 'aria-describedby': 'date picker', 'aria-invalid': false }}
                   renderInput={params => <TextField {...params} required helperText="Required*"
-                    placeholder='dd-mm-yyyy' 
+                    placeholder='dd-mm-yyyy'
                     />}/>
               </LocalizationProvider>
             </Grid>

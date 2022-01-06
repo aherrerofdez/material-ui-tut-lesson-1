@@ -96,7 +96,8 @@ const ResponsiveAppBar = () => {
             
                 {pages.map((page) => (
                   <Link key={page} href={page.toLowerCase().replace(/\s/g, '-')}>
-                    <MenuItem onClick={handleCloseNavMenu} >
+                    <MenuItem onClick={handleCloseNavMenu}
+                      sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }} >
                       <Typography textAlign="center"> {page} </Typography>
                     </MenuItem>
                   </Link>

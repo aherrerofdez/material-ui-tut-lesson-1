@@ -10,6 +10,9 @@ const theme = createTheme({
         },
         btnhoverlight: {
             main: '#F0F0F0'
+        },
+        error: {
+            main: '#A2A2A2'
         }
     }
 })

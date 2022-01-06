@@ -27,20 +27,20 @@ export default function Booking() {
         <Header />
         <Grid id="main-content"  container spacing={0} sx = {{ mb: 3 }}>
             {itemData.map((item) => (
-              <Grid item xs={12} sm={4} sx = {{ paddingLeft: 3, paddingRight: 3, paddingTop: 3 }}>
-              <ImageListItem key={item.img}>
-                <img
-                  src={`${item.img}?w=248&fit=crop&auto=format`}
-                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                  alt={item.title}
-                  loading= 'lazy' />
-              </ImageListItem>
-              <Typography sx = {{ fontWeight: 'bold', fontSize: '18pt', textAlign: 'center' }}>
-                {item.title} 
-              </Typography>
-              <Typography sx = {{ fontSize: '16pt', textAlign: 'center' }}>
-                <Link href="/booking" sx = {{ fontWeight: 'bold' }}>Book</Link> this space now.
-              </Typography>
+              <Grid item xs={12} sm={6} md={4} sx = {{ paddingLeft: 3, paddingRight: 3, paddingTop: 3 }}>
+                <ImageListItem key={item.img}>
+                  <img
+                    src={`${item.img}?w=248&fit=crop&auto=format`}
+                    srcSet={`${item.img}?w=248&fit=crop&auto=format`}
+                    alt={item.title}
+                    loading= 'lazy' />
+                </ImageListItem>
+                <Typography sx = {{ fontWeight: 'bold', fontSize: '16pt', textAlign: 'center' }}>
+                  {item.title} 
+                </Typography>
+                <Typography sx = {{ fontSize: '14pt', textAlign: 'center' }}>
+                  <Link href="/booking" sx = {{ fontWeight: 'bold' }}>Book</Link> this space now.
+                </Typography>
               </Grid>
             ))}
         </Grid>
