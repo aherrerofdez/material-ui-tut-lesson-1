@@ -18,10 +18,11 @@ import theme from '../components/Theme'
 import AdapterDayjs from '@mui/lab/AdapterDayjs'
 import LocalizationProvider from '@mui/lab/LocalizationProvider'
 import DatePicker from '@mui/lab/DatePicker'
+import TimePicker from '@mui/lab/TimePicker';
 
 export default function Booking() {
 
-  /* spaces radiobuttons*/
+  /* spaces radiobuttons */
   const [space, setSpace] = React.useState('')
 
   const handleChangeSpace = (event) => {
@@ -29,15 +30,12 @@ export default function Booking() {
   }
 
   /* handling the date picker */
-  const [date, setDate] = React.useState('');
+  const [date, setDate] = React.useState(new Date());
 
-  /*basic selection for time and duration*/
-  const [time, setTime] = React.useState('')
-
-  const handleChangeTime = (event) => {
-    setTime(event.target.value)
-  }
-
+  /* handling the time picker */
+  const [time, setTime] = React.useState(new Date());
+  
+  /* basic selection for duration */
   const [duration, setDuration] = React.useState('')
 
   const handleChangeDuration = (event) => {
@@ -84,7 +82,7 @@ export default function Booking() {
               <Box sx={{ display: 'flex' }}>
                 <FormControl required component="fieldset" sx={{ mt: '5px', mb: 2 }} variant="standard">
                   <RadioGroup aria-label="space" name="space" value={space} 
-                    onChange={handleChangeSpace}>
+                    onChange={handleChangeSpace} >
                     <FormControlLabel value="big_blue" control={<Radio required={true}/>} label="Big Blue Co-Working Space" />
                     <FormControlLabel value="plants" control={<Radio required={true}/>} label="Plants Co-Working Space" />
                     <FormControlLabel value="small_space" control={<Radio required={true}/>} label="Small Co-Working Space" />
@@ -106,48 +104,22 @@ export default function Booking() {
                   value={date}
                   onChange={(newValue) => { setDate(newValue) }}
                   inputProps={{ 'aria-label': 'required date', 'aria-describedby': 'date picker', 'aria-invalid': false }}
-                  renderInput={params => <TextField {...params} required helperText="Required*"
-                    placeholder='dd-mm-yyyy'
-                    />}/>
+                  renderInput={params => <TextField {...params} required helperText="Required*" {...register("date")} />}/>
               </LocalizationProvider>
             </Grid>
 
             <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 2 }}>
-              <Typography sx = {{fontWeight: 'bold', mb: 2}}>
+              <Typography sx = {{fontWeight: 'bold'}}>
                 Select the starting time
               </Typography>
-              <Box sx={{ minWidth: 120 }}>
-                <FormControl fullWidth required>
-                  <Select
-                    id="time"
-                    value={time}
-                    displayEmpty
-                    onChange={handleChangeTime}
-                    inputProps={{ 'aria-label': 'required time' }}>
-                    <MenuItem value={10.00}> 10:00</MenuItem>
-                    <MenuItem value={10.30}> 10:30</MenuItem>
-                    <MenuItem value={11.00}> 11:00</MenuItem>
-                    <MenuItem value={11.30}> 11:30 </MenuItem>
-                    <MenuItem value={12.00}> 12:00 </MenuItem>
-                    <MenuItem value={12.30}> 12:30 </MenuItem>
-                    <MenuItem value={13.00}> 13:00 </MenuItem>
-                    <MenuItem value={13.30}> 13:30 </MenuItem>
-                    <MenuItem value={14.00}> 14:00 </MenuItem>
-                    <MenuItem value={14.30}> 14:30 </MenuItem>
-                    <MenuItem value={15.00}> 15:00 </MenuItem>
-                    <MenuItem value={15.30}> 15:30 </MenuItem>
-                    <MenuItem value={16.00}> 16:00 </MenuItem>
-                    <MenuItem value={16.30}> 16:30 </MenuItem>
-                    <MenuItem value={17.00}> 17:00 </MenuItem>
-                    <MenuItem value={17.30}> 17:30 </MenuItem>
-                    <MenuItem value={18.00}> 18:00 </MenuItem>
-                    <MenuItem value={18.30}> 18:30 </MenuItem>
-                    <MenuItem value={19.00}> 19:00 </MenuItem>
-                    <MenuItem value={19.30}> 19:30 </MenuItem>
-                  </Select>
-                  <FormHelperText>Required*</FormHelperText>
-                </FormControl>
-              </Box>
+              <LocalizationProvider dateAdapter={AdapterDayjs} >
+                <TimePicker 
+                  value={time}
+                  onChange={setTime}
+                  inputProps={{ 'aria-label': 'required date', 'aria-describedby': 'date picker' }}
+                  renderInput={(params) => <TextField {...params} 
+                    required fullWidth helperText="Required*" {...register("time")}/>} />
+              </LocalizationProvider>
             </Grid>
 
             <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 2 }}>
@@ -160,6 +132,7 @@ export default function Booking() {
                     id="duration"
                     value={duration}
                     displayEmpty
+                    {...register("duration")}
                     onChange={handleChangeDuration}
                     inputProps={{ 'aria-label': 'required duration' }}>
                     <MenuItem value={'30 minutes'}> 30 minutes </MenuItem>
@@ -174,7 +147,8 @@ export default function Booking() {
 
             <Grid item xs={12} sm={4} sx = {{ px: 5, py: 7 }}>
               <Button type = 'submit' variant="contained" aria-label='Book space' 
-                sx = {{ height: 56, width: 100, fontSize: '12pt', '&:hover': { backgroundColor: theme.palette.btnhover.main } }}>
+                sx = {{ height: 56, width: 100, fontSize: '12pt', mb: 5,
+                  '&:hover': { backgroundColor: theme.palette.btnhover.main } }}>
                 Book
               </Button>
             </Grid>
