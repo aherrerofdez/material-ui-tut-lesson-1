@@ -50,8 +50,23 @@ export default function Booking() {
   /*data registration and validation*/
   const { register } = useForm();
 
-  const onSubmit = () => {
-    alert('Your reservation has been added!')
+  const onSubmit = (e) => {
+    e.preventDefault()
+    var flagD = true
+    var flagT = true
+    if (date['$d'] == 'Invalid Date') {
+      flagD = false
+      alert("The date format is not correct. Please, follow MM/DD/YYYY")
+      return false
+    }
+    if (time['$d'] == 'Invalid Date') {
+      flagT = false
+      alert("The time format is not correct. Please, follow HH:MM AM or HH:MM PM")
+      return false
+    }
+    if (flagD && flagT) {
+      alert('Your reservation has been added!')
+    }
   }
 
   return (
@@ -61,7 +76,7 @@ export default function Booking() {
         <Box id="main-content"
           component="form" 
           sx={{ '& .MuiTextField-root': { mt: 2 }, flexGrow: 1 }}
-          onSubmit={onSubmit} >
+          onSubmit={(e) => {onSubmit(e)}} >
           
           <Typography variant='h5' sx = {{ pl: 5, pt: 5, pb: 2, fontWeight: 'bold' }}>
               Book a space
@@ -107,8 +122,7 @@ export default function Booking() {
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker
                   value={date}
-                  onChange={(newValue) => { setDate(newValue) }}
-                  onError={() => {setDate('')}}
+                  onChange={(newValue) => {setDate(newValue)}}
                   inputProps={{ 'aria-label': 'required date', 'aria-describedby': 'date picker' }}
                   renderInput={params => <TextField {...params} required helperText="Required*" {...register("date")} />}/>
               </LocalizationProvider>
@@ -121,7 +135,8 @@ export default function Booking() {
               <LocalizationProvider dateAdapter={AdapterDayjs} >
                 <TimePicker 
                   value={time}
-                  onChange={setTime}
+                  onChange={(newValue) => {setTime(newValue)}}
+                  {...console.log(time)}
                   inputProps={{ 'aria-label': 'required time', 'aria-describedby': 'time picker' }}
                   renderInput={(params) => <TextField {...params} 
                     required fullWidth helperText="Required*" {...register("time")}/>} />

@@ -48,7 +48,7 @@ const ResponsiveAppBar = () => {
           <Toolbar disableGutters>
             {/* Displays LOGO in desktop version */}
             <Tooltip title="Home">
-              <Link title="home" key="home" href="/">
+              <Link key="home" href="/">
                 <Typography
                   variant="h6"
                   color="common.white"
@@ -80,7 +80,6 @@ const ResponsiveAppBar = () => {
               <Tooltip title="Open menu">
                 <IconButton
                   size="large"
-                  title="open menu"
                   aria-label="menu"
                   aria-controls="menu-appbar"
                   aria-haspopup="true"
@@ -113,7 +112,7 @@ const ResponsiveAppBar = () => {
 
             {/* Displays LOGO in mobile version */}
             <Tooltip title="Home">
-              <Link title="home" key="home-mobile" href="/" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
+              <Link key="home-mobile" href="/" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
                 <Typography variant="h6" color="common.white" noWrap component="div">
                   WorCo
                 </Typography>
@@ -124,7 +123,6 @@ const ResponsiveAppBar = () => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton 
-                  title="open settings"
                   aria-label="settings"
                   aria-controls="settings-appbar"
                   aria-haspopup="true"
