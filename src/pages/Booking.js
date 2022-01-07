@@ -79,14 +79,18 @@ export default function Booking() {
           component="form" 
           sx={{ '& .MuiTextField-root': { mt: 2 }, flexGrow: 1 }}
           onSubmit={(e) => {onSubmit(e)}} >
-          
-          <Typography variant='h5' sx = {{ pl: 5, pt: 5, pb: 2, fontWeight: 'bold' }}>
-              Book a space
+
+          <Typography variant='h1' sx = {{pl: 5, pt: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }}>
+            Book a space
+          </Typography>
+
+          <Typography variant='h2' sx={{ pl: 5, mt: 2, mb: 4, fontWeight: 'bold', fontSize: '18pt', color: theme.palette.primary.main }}>
+            Complete the following form to book a space
           </Typography>
 
           <Grid role="form" container spacing={0}>
-            <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 2 }}>
-              <Typography sx = {{fontWeight: 'bold'}}>
+            <Grid item xs={12} sm={4} sx = {{ px: 5, mb: 5 }}>
+              <Typography variant='h3' sx = {{fontSize: '12pt', fontWeight: 'bold'}}>
                 Reservation name
               </Typography>
               <TextField 
@@ -98,18 +102,18 @@ export default function Booking() {
                 {...register("fullName", {required: true})} />
             </Grid>
 
-            <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 2 }}>
-              <Typography sx = {{ fontWeight: 'bold' }}>
+            <Grid item xs={12} sm={4} sx = {{ px: 5, mb: 5 }}>
+              <Typography variant='h3' sx = {{fontSize: '12pt', fontWeight: 'bold', mb: 1 }}>
                 Select a space
               </Typography>
               <Box sx={{ display: 'flex' }}>
-                <FormControl required component="fieldset" sx={{ mt: '5px', mb: 2 }} variant="standard">
+                <FormControl required component="fieldset" sx={{ mt: '5px' }} variant="standard">
                   <RadioGroup aria-label="space" name="space" value={space} 
                     onChange={handleChangeSpace} >
                     <FormControlLabel value="big_blue" control={<Radio required={true}/>} label="Big Blue Co-Working Space" />
                     <FormControlLabel value="plants" control={<Radio required={true}/>} label="Plants Co-Working Space" />
                     <FormControlLabel value="small_space" control={<Radio required={true}/>} label="Small Co-Working Space" />
-                    <FormControlLabel value="open_space" control={<Radio required={true}/>} label="Open Co-Working Space" />
+                    <FormControlLabel value="open" control={<Radio required={true}/>} label="Open Co-Working Space" />
                     <FormControlLabel value="big_meeting" control={<Radio required={true}/>} label="Big Meeting Room" />
                     <FormControlLabel value="small_meeting" control={<Radio required={true}/>} label="Small Meeting Room" />
                   </RadioGroup>
@@ -118,8 +122,8 @@ export default function Booking() {
               </Box>
             </Grid>
 
-            <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 2 }}>
-              <Typography sx = {{fontWeight: 'bold'}}>
+            <Grid item xs={12} sm={4} sx = {{ px: 5, mb: 5 }}>
+              <Typography variant='h3' sx = {{fontSize: '12pt', fontWeight: 'bold'}}>
                 Select the date
               </Typography>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -134,8 +138,8 @@ export default function Booking() {
               </LocalizationProvider>
             </Grid>
 
-            <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 2 }}>
-              <Typography sx = {{fontWeight: 'bold'}}>
+            <Grid item xs={12} sm={4} sx = {{ px: 5, mb: 5 }}>
+              <Typography variant='h3' sx = {{fontSize: '12pt', fontWeight: 'bold'}}>
                 Select the starting time
               </Typography>
               <LocalizationProvider dateAdapter={AdapterDayjs} >
@@ -150,8 +154,8 @@ export default function Booking() {
               </LocalizationProvider>
             </Grid>
 
-            <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 2 }}>
-              <Typography sx = {{ fontWeight: 'bold', mb: 2 }}>
+            <Grid item xs={12} sm={4} sx = {{ px: 5 }}>
+              <Typography variant='h3' sx = {{fontSize: '12pt', fontWeight: 'bold', mb: 2 }}>
                 Select the duration 
               </Typography>
               <Box sx={{ minWidth: 120 }}>
@@ -173,9 +177,9 @@ export default function Booking() {
               </Box>
             </Grid>
 
-            <Grid item xs={12} sm={4} sx = {{ px: 5, py: 7 }}>
+            <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 5, mt: '3px', mb: 3 }}>
               <Button type = 'submit' variant="contained" aria-label='Book space' 
-                sx = {{ height: 56, width: 100, fontSize: '12pt', mb: 5,
+                sx = {{ fontSize: '12pt', mb: 5,
                   '&:hover': { backgroundColor: theme.palette.btnhover.main } }}>
                 Book
               </Button>

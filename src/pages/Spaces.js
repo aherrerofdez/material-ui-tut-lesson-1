@@ -15,7 +15,7 @@ const itemData = [
   {img: 'https://images.unsplash.com/photo-1604328727766-a151d1045ab4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     title: 'Small Co-Working Space'},
   {img: 'https://images.unsplash.com/photo-1553028826-f4804a6dba3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-    title: 'Open Space Co-working Space'},
+    title: 'Open Co-working Space'},
   {img: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80',
     title: 'Big Meeting Room'},
   {img: 'https://images.unsplash.com/photo-1532916123995-50bad0fc528e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
@@ -32,9 +32,15 @@ export default function Booking() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Grid role="main" id="main-content"  container spacing={0} sx = {{ mb: 3 }}>
+        <Typography variant='h1' sx = {{pl: 5, py: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
+          Our available spaces
+        </Typography>
+        <Grid role="main" id="main-content"  container spacing={0}>
             {itemData.map((item) => (
-              <Grid item xs={12} sm={6} md={4} sx = {{ paddingLeft: 3, paddingRight: 3, paddingTop: 3 }}>
+              <Grid item xs={12} sm={6} md={4} sx = {{ px: 3 }}>
+                <Typography variant='h2' sx = {{ mb: 1, fontWeight: 'bold', fontSize: '14pt', textAlign: 'center' }}>
+                  {item.title} 
+                </Typography>
                 <ImageListItem key={item.img}>
                   <img
                     src={`${item.img}?w=248&fit=crop&auto=format`}
@@ -42,11 +48,8 @@ export default function Booking() {
                     alt={item.title}
                     loading= 'lazy' />
                 </ImageListItem>
-                <Typography sx = {{ fontWeight: 'bold', fontSize: '16pt', textAlign: 'center' }}>
-                  {item.title} 
-                </Typography>
-                <Typography sx = {{ fontSize: '14pt', textAlign: 'center', my: 1 }}>
-                  <Link href="/booking" sx = {{ fontWeight: 'bold', py: 1.5 }}>Book</Link> this space now.
+                <Typography sx = {{ fontSize: '11pt', textAlign: 'center', px: 2, mb: 5 }}>
+                  <Link href="/booking" sx = {{ fontWeight: 'bold', py: 2 }}>Book</Link> the {item.title.toLowerCase()} now.
                 </Typography>
               </Grid>
             ))}

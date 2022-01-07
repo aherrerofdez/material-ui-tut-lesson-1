@@ -43,16 +43,29 @@ function Row(props) {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ m: 1 }}>
-              <Typography variant="h6" gutterBottom component="div">
+              <Typography variant='h3' gutterBottom component="div"
+                sx={{ fontSize: '14pt', fontWeight: 500, color: theme.palette.primary.main }} >
                 Reservation Details
               </Typography>
 
               <Table size="small" aria-label="reservation details">
                 <TableHead>
                   <TableRow>
-                    <TableCell> Customer </TableCell>
-                    <TableCell> Time </TableCell>
-                    <TableCell> Duration </TableCell>
+                    <TableCell>
+                      <Typography variant='h4' sx={{ fontSize: '11pt', fontWeight: 500, color: theme.palette.primary.main }} >
+                        Customer
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography variant='h4' sx={{ fontSize: '11pt', fontWeight: 500, color: theme.palette.primary.main }} >
+                        Time
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography variant='h4' sx={{ fontSize: '11pt', fontWeight: 500, color: theme.palette.primary.main }} >
+                        Duration
+                      </Typography>
+                    </TableCell>
                   </TableRow>
                 </TableHead>
 
@@ -88,12 +101,12 @@ Row.propTypes = {
   .isRequired}
 
 const rows = [
-  {name: 'Team Meeting', space: 'Big Blue', date: '12-01-2022', details:
+  {name: 'Team Meeting', space: 'Big Blue', date: '01-12-2022', details:
     [{customerId: 11091700, time: '10:30', duration: '1 hour'}]},
-  {name: 'Meeting with VC', space: 'Big Meeting Room', date: '14-01-2022', details:
+  {name: 'Meeting with VC', space: 'Big Meeting Room', date: '01-14-2022', details:
   [{customerId: 11091700, time: '12:00', duration: '30 min'}]},
-  {name: 'Call with Developer', space: 'Small Meeting Room', date: '17-01-2022', details:
-    [{customerId: 11091700, time: '11:30', duration: '1 hour'}]}]
+  {name: 'Call with Developer', space: 'Small Meeting Room', date: '01-17-2022', details:
+    [{customerId: 11091700, time: '11:45', duration: '1 hour'}]}]
 
 export default function Reservations() {
 
@@ -106,19 +119,24 @@ export default function Reservations() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <TableContainer role="main" id="main-content" component={Paper}>
+        <Typography variant='h1' sx = {{pl: 5, py: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
+          Your reservations
+        </Typography>
+        <TableContainer role="main" id="main-content" component={Paper} sx={{ }}>
           <Table aria-label="collapsible table with your reservations">
             <TableHead>
               <TableRow>
                 <TableCell />
                 <TableCell>
-                  <Typography variant='h6'> Reservation ID </Typography>
+                  <Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '15pt', color: theme.palette.primary.main }}>
+                    Reservation ID
+                  </Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant='h6'> Space </Typography>
+                  <Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '15pt', color: theme.palette.primary.main }}> Space </Typography>
                 </TableCell>
                 <TableCell> 
-                  <Typography variant='h6'> Date </Typography>
+                  <Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '15pt', color: theme.palette.primary.main }}> Date </Typography>
                 </TableCell>
               </TableRow>
             </TableHead>

@@ -18,12 +18,9 @@ export default function Home() {
         <Box role="main" id="main-content" sx={{ flexGrow: 1, mt: 5, mx: 5, mb: 2 }}>
           <Grid container spacing={6}>
             <Grid item xs={12} sm={6}>
-              <Typography sx = {{ verticalAlign: 'middle', fontSize: '18pt' }}>
-                Welcome to  
-              </Typography>
-
-              <Typography variant='h3' sx = {{ color: theme.palette.primary.main, fontWeight: 'bold' }}>
-                WorCo
+              <Typography variant='h1' sx={{ fontWeight: 'bold', fontSize: '18pt' }}>
+                Welcome to <br></br>
+                <span style={{ color: theme.palette.primary.main, fontSize: '37pt' }}> WorCo </span>
               </Typography>
 
               <Typography sx = {{ pt: 5 }}>
@@ -43,8 +40,14 @@ export default function Home() {
                     sx = {{ mt: 5 }} />
             </Grid>
 
+            <Grid item xs={12}>
+              <Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '20pt', color: theme.palette.primary.main, mt: 4, textAlign: 'center' }}>
+                Why WorCo ?
+              </Typography>
+            </Grid>
+
             <Grid item xs={12} sm={4}>
-              <Typography variant='h6' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold' }}>
+              <Typography variant='h3' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt' }}>
                 Flexible  
               </Typography>
               <Typography sx = {{ textAlign: 'center' }}>
@@ -53,7 +56,7 @@ export default function Home() {
             </Grid>
 
             <Grid item xs={12} sm={4}>           
-              <Typography variant='h6' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold' }}>
+              <Typography variant='h3' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt' }}>
                 Secure  
               </Typography>
               <Typography sx = {{ textAlign: 'center' }}>
@@ -62,7 +65,7 @@ export default function Home() {
             </Grid>
 
             <Grid item xs={12} sm={4}>
-              <Typography variant='h6' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold' }}>
+              <Typography variant='h3' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt' }}>
                 Well-equipped  
               </Typography>
               <Typography sx = {{ textAlign: 'center' }}>
@@ -70,7 +73,7 @@ export default function Home() {
               </Typography>
             </Grid>
 
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6} sx={{ mt: 4 }}>
               <img 
                 src='https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80'
                 alt= 'Big Meeting Room'
@@ -79,8 +82,8 @@ export default function Home() {
                 sx = {{ mt: 5 }} />
             </Grid>
 
-            <Grid item xs={12} sm={6}>
-              <Typography variant='h5' sx = {{ verticalAlign: 'middle', mb: 2 }}>
+            <Grid item xs={12} sm={6} sx={{ mt: 4 }}>
+              <Typography variant='h2' sx = {{ fontWeight: 'bold', fontSize: '20pt', color: theme.palette.primary.main, mb: 2 }}>
                 What we offer 
               </Typography>
 
@@ -89,14 +92,16 @@ export default function Home() {
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"
                   id="panel1a-header">
-                  <Typography>Spaces for all needs</Typography>
+                  <Typography variant='h3' sx = {{ color: theme.palette.primary.main, fontWeight: 500, fontSize: '12pt' }}>
+                    Spaces for all needs
+                  </Typography>
                 </AccordionSummary>
                 
                 <AccordionDetails>
                   <Typography>
                     In WorCo, you can find large meeting rooms, small and intimate places 
                     to work alone, rooms for collaboration and much more.
-                    <br></br>
+                    <br></br><br></br>
                     Check out all of our <Link href="/spaces">spaces</Link>.
                   </Typography>
                 </AccordionDetails>
@@ -107,7 +112,9 @@ export default function Home() {
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel2a-content"
                   id="panel2a-header">
-                  <Typography>Fast Internet connection</Typography>
+                  <Typography variant='h3' sx = {{ color: theme.palette.primary.main, fontWeight: 500, fontSize: '12pt' }}>
+                    Fast Internet connection
+                  </Typography>
                 </AccordionSummary>
 
                 <AccordionDetails>
@@ -123,7 +130,9 @@ export default function Home() {
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel3a-content"
                   id="panel3a-header">
-                  <Typography>Easy reservation process</Typography>
+                  <Typography variant='h3' sx = {{ color: theme.palette.primary.main, fontWeight: 500, fontSize: '12pt' }}>
+                    Easy reservation process
+                  </Typography>
                 </AccordionSummary>
 
                 <AccordionDetails>
@@ -140,7 +149,9 @@ export default function Home() {
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel4a-content"
                   id="panel4a-header">
-                  <Typography>Conferencing equipment</Typography>
+                  <Typography variant='h3' sx = {{ color: theme.palette.primary.main, fontWeight: 500, fontSize: '12pt' }}>
+                    Conferencing equipment
+                  </Typography>
                 </AccordionSummary>
                 
                 <AccordionDetails>

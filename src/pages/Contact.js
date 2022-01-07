@@ -40,16 +40,16 @@ export default function Contact() {
           sx={{ '& .MuiTextField-root': { mt: 2 }, flexGrow: 1 }}
           onSubmit={onSubmit} >
           
-          <Typography variant='h5' sx = {{ pl: 5, pt: 5, pb: 2, fontWeight: 'bold' }}>
-              Contact us
+          <Typography variant='h1' sx = {{pl: 5, pt: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
+            Contact us
           </Typography>
-          <Typography variant='h6' sx = {{ pl: 5, pb: 2, fontWeight: 'bold' }}>
-              Send us a message: 
+          <Typography variant='h2' sx={{ pl: 5, mt: 2, mb: 4, fontWeight: 'bold', fontSize: '18pt', color: theme.palette.primary.main }}>
+              Send us a message by completing this form
           </Typography>
 
           <Grid role="form" container spacing={0}>
-            <Grid item xs={12} sm={6} sx = {{ px: 5, pt: 2 }}>
-              <Typography sx = {{ fontWeight: 'bold' }}> Full name </Typography>
+            <Grid item xs={12} sm={6} sx = {{ px: 5, mb: 4 }}>
+              <Typography variant='h3' sx = {{fontSize: '12pt', fontWeight: 'bold'}}> Full name </Typography>
               <TextField
                   required
                   id="name_textfield"
@@ -60,8 +60,8 @@ export default function Contact() {
                   {...register("fullName", {required: true})} />
             </Grid>
 
-            <Grid item xs={12} sm={6} sx = {{ px: 5, pt: 2 }}>
-              <Typography sx = {{ fontWeight: 'bold' }}> Email address </Typography>
+            <Grid item xs={12} sm={6} sx = {{ px: 5, mb: 4 }}>
+              <Typography variant='h3' sx = {{fontSize: '12pt', fontWeight: 'bold'}}> Email address </Typography>
               <TextField
                   required
                   fullWidth
@@ -72,8 +72,8 @@ export default function Contact() {
                   {...register("email", {required: true})} />
             </Grid>
 
-            <Grid item xs={12} sm={6} sx = {{ px: 5, pt: 2 }}>
-              <Typography sx = {{ fontWeight: 'bold' }}> Your message </Typography>
+            <Grid item xs={12} sm={6} sx = {{ px: 5 }}>
+              <Typography variant='h3' sx = {{fontSize: '12pt', fontWeight: 'bold'}}> Your message </Typography>
               <TextField
                   required
                   fullWidth
@@ -86,20 +86,20 @@ export default function Contact() {
                   {...register("message", {required: true})} />
             </Grid>
 
-            <Grid item xs={12} sx = {{ mx: 5, mt: 2 }}>
+            <Grid item xs={12} sx = {{ px: 5, pt: 4 }}>
               <Button type = 'submit' variant="contained" endIcon={<SendIcon />} aria-label='Send Message'
-                sx = {{ '&:hover': { backgroundColor: theme.palette.btnhover.main } }}>
+                sx = {{ fontSize: '12pt', '&:hover': { backgroundColor: theme.palette.btnhover.main } }}>
                 Send
               </Button>
             </Grid>
 
-            <Grid item xs={12} sx = {{ mx: 5, mt: 2 }}>
-              <Typography variant='h6' sx = {{ mb: 2, mt: 5, fontWeight: 'bold' }}>
+            <Grid item xs={12}>
+              <Typography variant='h2' sx={{ pl: 5, mb: 3, mt: 8, fontWeight: 'bold', fontSize: '20pt', color: theme.palette.primary.main }}>
                 Find us on social media: 
               </Typography>
             </Grid>
 
-            <Grid item xs={12} sx = {{ mx: 5, mb: 10 }}>
+            <Grid item xs={12} sx = {{ mx: 5, mb: 5, ml: 3}}>
               <Tooltip title="Instagram">
                 <Button href="https://www.instagram.com/accounts/login/" aria-label='Instagram'
                   sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
