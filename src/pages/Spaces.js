@@ -6,6 +6,9 @@ import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 import { ThemeProvider } from '@mui/material/styles'
 import theme from '../components/Theme'
+import Breadcrumbs from '@mui/material/Breadcrumbs'
+import NavigateNextIcon from '@mui/icons-material/NavigateNext'
+import HomeIcon from '@mui/icons-material/Home'
 
 const itemData = [
   {img: 'https://images.unsplash.com/photo-1600508774634-4e11d34730e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
@@ -32,9 +35,19 @@ export default function Booking() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
+        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small"/>}
+          sx = {{ color: theme.palette.primary.main, ml: 3, mt: 1 }}>
+          <Link underline="hover" href="/"> 
+            {<HomeIcon sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
+            WorCo Home
+          </Link>
+          <Typography sx = {{ color: theme.palette.primary.main }}> Spaces </Typography>
+        </Breadcrumbs>
+
         <Typography variant='h1' sx = {{pl: 5, py: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
           Our available spaces
         </Typography>
+
         <Grid role="main" id="main-content"  container spacing={0}>
             {itemData.map((item) => (
               <Grid item xs={12} sm={6} md={4} sx = {{ px: 3 }}>

@@ -18,7 +18,11 @@ import theme from '../components/Theme'
 import AdapterDayjs from '@mui/lab/AdapterDayjs'
 import LocalizationProvider from '@mui/lab/LocalizationProvider'
 import DatePicker from '@mui/lab/DatePicker'
-import TimePicker from '@mui/lab/TimePicker';
+import TimePicker from '@mui/lab/TimePicker'
+import Link from '@mui/material/Link'
+import Breadcrumbs from '@mui/material/Breadcrumbs'
+import NavigateNextIcon from '@mui/icons-material/NavigateNext'
+import HomeIcon from '@mui/icons-material/Home'
 
 export default function Booking() {
 
@@ -73,6 +77,15 @@ export default function Booking() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
+        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small"/>}
+          sx = {{ color: theme.palette.primary.main ,ml: 3, mt: 1 }}>
+          <Link underline="hover" href="/"> 
+            {<HomeIcon sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
+            WorCo Home
+          </Link>
+          <Typography> Booking </Typography>
+        </Breadcrumbs>
+
         <Box
           role="main"
           id="main-content"

@@ -17,6 +17,10 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { ThemeProvider } from '@mui/material/styles'
 import theme from '../components/Theme'
 import Tooltip from '@mui/material/Tooltip'
+import Breadcrumbs from '@mui/material/Breadcrumbs'
+import NavigateNextIcon from '@mui/icons-material/NavigateNext'
+import Link from '@mui/material/Link'
+import HomeIcon from '@mui/icons-material/Home'
 
 function Row(props) {
   const { row } = props
@@ -119,9 +123,19 @@ export default function Reservations() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
+        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small"/>}
+          sx = {{ color: theme.palette.primary.main, ml: 3, mt: 1 }}>
+          <Link underline="hover" href="/"> 
+            {<HomeIcon sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
+            WorCo Home
+          </Link>
+          <Typography sx = {{ color: theme.palette.primary.main }}> Reservations </Typography>
+        </Breadcrumbs>
+
         <Typography variant='h1' sx = {{pl: 5, py: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
           Your reservations
         </Typography>
+        
         <TableContainer role="main" id="main-content" component={Paper} sx={{ }}>
           <Table aria-label="collapsible table with your reservations">
             <TableHead>

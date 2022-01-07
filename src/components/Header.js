@@ -43,7 +43,7 @@ const ResponsiveAppBar = () => {
         '&:focus': { color: '#fff', backgroundColor:'#000', left: 'auto', top: 'auto',
           width: '20%', height: 'auto', overflow:'auto', my: '20px', mx: '40%', p:'5px', borderRadius: '5px',
           textAlign:'center'}}}> Skip to content </Link>
-      <AppBar role="navigation" position="static">
+      <AppBar role="navigation" position="static" aria-label="menu bar and settings">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             {/* Displays LOGO in desktop version */}

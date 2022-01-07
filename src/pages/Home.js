@@ -9,12 +9,22 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Link from '@mui/material/Link'
 import { ThemeProvider } from '@mui/material/styles'
 import theme from '../components/Theme'
+import Breadcrumbs from '@mui/material/Breadcrumbs'
+import HomeIcon from '@mui/icons-material/Home'
 
 export default function Home() {
   return (
     <>
       <ThemeProvider theme={theme}>
         <Header />
+        <Breadcrumbs aria-label="breadcrumb" 
+          sx = {{ color: theme.palette.primary.main, ml: 3, mt: 1 }}>
+          <Link underline="hover" href="/"> 
+            {<HomeIcon sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
+            WorCo Home
+          </Link>
+        </Breadcrumbs>
+
         <Box role="main" id="main-content" sx={{ flexGrow: 1, mt: 5, mx: 5, mb: 2 }}>
           <Grid container spacing={6}>
             <Grid item xs={12} sm={6}>

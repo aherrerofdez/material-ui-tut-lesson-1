@@ -16,7 +16,11 @@ import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import { ThemeProvider } from '@mui/material/styles'
 import theme from '../components/Theme'
-import EditIcon from '@mui/icons-material/Edit';
+import EditIcon from '@mui/icons-material/Edit'
+import Breadcrumbs from '@mui/material/Breadcrumbs'
+import Link from '@mui/material/Link'
+import HomeIcon from '@mui/icons-material/Home'
+import NavigateNextIcon from '@mui/icons-material/NavigateNext'
 
 export default function Profile() {
 
@@ -58,10 +62,19 @@ export default function Profile() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
+        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small"/>}
+          sx = {{ color: theme.palette.primary.main, ml: 3, mt: 1 }}>
+          <Link underline="hover" href="/"> 
+            {<HomeIcon sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
+            WorCo Home
+          </Link>
+          <Typography sx = {{ color: theme.palette.primary.main }}> Profile </Typography>
+        </Breadcrumbs>
         <Box role="main" id="main-content" sx={{ flexGrow: 1, mt: 3, mx: 5, mb: 2 }}>
           <Typography variant='h1' sx = {{ mb: 3, fontSize: '24pt', fontWeight: 'bold' }}>
             Your profile
           </Typography>
+          
           <Grid container spacing={6}>
             <Grid item xs={12} sm={4}>
                 <img

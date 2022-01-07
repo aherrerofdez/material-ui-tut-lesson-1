@@ -14,6 +14,10 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import { ThemeProvider } from '@mui/material/styles'
 import theme from '../components/Theme'
 import Tooltip from '@mui/material/Tooltip'
+import Link from '@mui/material/Link'
+import Breadcrumbs from '@mui/material/Breadcrumbs'
+import NavigateNextIcon from '@mui/icons-material/NavigateNext'
+import HomeIcon from '@mui/icons-material/Home'
 
 export default function Contact() {
 
@@ -33,6 +37,15 @@ export default function Contact() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
+        <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small"/>}
+          sx = {{ color: theme.palette.primary.main ,ml: 3, mt: 1 }}>
+          <Link underline="hover" href="/"> 
+            {<HomeIcon sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
+            WorCo Home
+          </Link>
+          <Typography sx = {{ color: theme.palette.primary.main }}> Contact us </Typography>
+        </Breadcrumbs>
+
         <Box 
           role="main"
           id="main-content"
@@ -43,6 +56,7 @@ export default function Contact() {
           <Typography variant='h1' sx = {{pl: 5, pt: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
             Contact us
           </Typography>
+          
           <Typography variant='h2' sx={{ pl: 5, mt: 2, mb: 4, fontWeight: 'bold', fontSize: '18pt', color: theme.palette.primary.main }}>
               Send us a message by completing this form
           </Typography>
