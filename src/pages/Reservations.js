@@ -104,7 +104,7 @@ export default function Reservations() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <TableContainer id="main-content" component={Paper}>
+        <TableContainer role="main" id="main-content" component={Paper}>
           <Table aria-label="collapsible table with your reservations">
             <TableHead>
               <TableRow>

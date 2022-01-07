@@ -73,7 +73,9 @@ export default function Booking() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Box id="main-content"
+        <Box
+          role="main"
+          id="main-content"
           component="form" 
           sx={{ '& .MuiTextField-root': { mt: 2 }, flexGrow: 1 }}
           onSubmit={(e) => {onSubmit(e)}} >
@@ -82,7 +84,7 @@ export default function Booking() {
               Book a space
           </Typography>
 
-          <Grid container spacing={0}>
+          <Grid role="form" container spacing={0}>
             <Grid item xs={12} sm={4} sx = {{ px: 5, pt: 2 }}>
               <Typography sx = {{fontWeight: 'bold'}}>
                 Reservation name

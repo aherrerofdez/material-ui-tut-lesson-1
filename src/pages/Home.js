@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Box id="main-content" sx={{ flexGrow: 1, mt: 5, mx: 5, mb: 2 }}>
+        <Box role="main" id="main-content" sx={{ flexGrow: 1, mt: 5, mx: 5, mb: 2 }}>
           <Grid container spacing={6}>
             <Grid item xs={12} sm={6}>
               <Typography sx = {{ verticalAlign: 'middle', fontSize: '18pt' }}>

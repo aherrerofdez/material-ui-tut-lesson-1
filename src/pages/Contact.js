@@ -33,10 +33,12 @@ export default function Contact() {
     <>
       <ThemeProvider theme={theme}>
         <Header />
-        <Box id="main-content"
-            component="form"
-            sx={{ '& .MuiTextField-root': { mt: 2 }, flexGrow: 1 }}
-            onSubmit={onSubmit} >
+        <Box 
+          role="main"
+          id="main-content"
+          component="form"
+          sx={{ '& .MuiTextField-root': { mt: 2 }, flexGrow: 1 }}
+          onSubmit={onSubmit} >
           
           <Typography variant='h5' sx = {{ pl: 5, pt: 5, pb: 2, fontWeight: 'bold' }}>
               Contact us
@@ -45,7 +47,7 @@ export default function Contact() {
               Send us a message: 
           </Typography>
 
-          <Grid container spacing={0}>
+          <Grid role="form" container spacing={0}>
             <Grid item xs={12} sm={6} sx = {{ px: 5, pt: 2 }}>
               <Typography sx = {{ fontWeight: 'bold' }}> Full name </Typography>
               <TextField
