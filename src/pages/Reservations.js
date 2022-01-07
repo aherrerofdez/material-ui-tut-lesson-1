@@ -43,7 +43,7 @@ function Row(props) {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ m: 1 }}>
-              <Typography variant='h3' gutterBottom component="div"
+              <Typography variant='h3' gutterBottom 
                 sx={{ fontSize: '14pt', fontWeight: 500, color: theme.palette.primary.main }} >
                 Reservation Details
               </Typography>
