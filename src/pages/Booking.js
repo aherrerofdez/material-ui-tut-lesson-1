@@ -93,6 +93,7 @@ export default function Booking() {
                 required id="name"
                 placeholder="Insert a name for your reservation"
                 helperText="Required*"
+                FormHelperTextProps={{ style: { color: theme.palette.helpertxt.main }}}
                 fullWidth
                 {...register("fullName", {required: true})} />
             </Grid>
@@ -112,7 +113,7 @@ export default function Booking() {
                     <FormControlLabel value="big_meeting" control={<Radio required={true}/>} label="Big Meeting Room" />
                     <FormControlLabel value="small_meeting" control={<Radio required={true}/>} label="Small Meeting Room" />
                   </RadioGroup>
-                  <FormHelperText> Required* </FormHelperText>
+                  <FormHelperText sx={{ color: theme.palette.helpertxt.main }}> Required* </FormHelperText>
                 </FormControl>
               </Box>
             </Grid>
@@ -126,7 +127,9 @@ export default function Booking() {
                   value={date}
                   onChange={(newValue) => {setDate(newValue)}}
                   inputProps={{ 'aria-label': 'required date', 'aria-describedby': 'date picker' }}
-                  renderInput={params => <TextField {...params} required helperText="Required*" {...register("date")} />}/>
+                  renderInput={params => <TextField {...params} required 
+                  helperText="Required*" FormHelperTextProps={{ style: { color: theme.palette.helpertxt.main }}}
+                  {...register("date")} />}/>
               </LocalizationProvider>
             </Grid>
 
@@ -138,10 +141,11 @@ export default function Booking() {
                 <TimePicker 
                   value={time}
                   onChange={(newValue) => {setTime(newValue)}}
-                  {...console.log(time)}
                   inputProps={{ 'aria-label': 'required time', 'aria-describedby': 'time picker' }}
                   renderInput={(params) => <TextField {...params} 
-                    required fullWidth helperText="Required*" {...register("time")}/>} />
+                    required fullWidth 
+                    helperText="Required*" FormHelperTextProps={{ style: { color: theme.palette.helpertxt.main }}}
+                    {...register("time")}/>} />
               </LocalizationProvider>
             </Grid>
 
@@ -163,7 +167,7 @@ export default function Booking() {
                     <MenuItem value={'1 hour 30 minutes'}> 1 hour 30 minutes </MenuItem>
                     <MenuItem value={'2 hours'}> 2 hours </MenuItem>
                   </Select>
-                  <FormHelperText>Required*</FormHelperText>
+                  <FormHelperText sx = {{ color: theme.palette.helpertxt.main }}> Required* </FormHelperText>
                 </FormControl>
               </Box>
             </Grid>

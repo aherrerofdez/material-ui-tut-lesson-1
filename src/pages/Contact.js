@@ -55,6 +55,7 @@ export default function Contact() {
                   id="name_textfield"
                   placeholder="Insert your full name"
                   helperText="Required*"
+                  FormHelperTextProps={{ style: { color: theme.palette.helpertxt.main }}}
                   fullWidth
                   {...register("fullName", {required: true})} />
             </Grid>
@@ -67,6 +68,7 @@ export default function Contact() {
                   id="email_textfield"
                   placeholder="Insert your email address"
                   helperText="Required*"
+                  FormHelperTextProps={{ style: { color: theme.palette.helpertxt.main }}}
                   {...register("email", {required: true})} />
             </Grid>
 
@@ -78,6 +80,7 @@ export default function Contact() {
                   id="message_textfield"
                   placeholder="Insert your message here"
                   helperText="Required*"
+                  FormHelperTextProps={{ style: { color: theme.palette.helpertxt.main }}}
                   multiline
                   rows={4}
                   {...register("message", {required: true})} />
