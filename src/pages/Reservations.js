@@ -51,7 +51,6 @@ function Row(props) {
                     <TableCell> Customer </TableCell>
                     <TableCell> Time </TableCell>
                     <TableCell> Duration </TableCell>
-                    <TableCell align="right"> Total price (€) </TableCell>
                   </TableRow>
                 </TableHead>
 
@@ -61,7 +60,6 @@ function Row(props) {
                       <TableCell component="th" scope="row"> {detailsRow.customerId} </TableCell>
                       <TableCell> {detailsRow.time} </TableCell>
                       <TableCell> {detailsRow.duration} </TableCell>
-                      <TableCell align="right"> {detailsRow.price} </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -83,18 +81,17 @@ Row.propTypes = {
       PropTypes.shape({
         customerId: PropTypes.number.isRequired,
         time: PropTypes.string.isRequired,
-        duration: PropTypes.string.isRequired,
-        price: PropTypes.string.isRequired
+        duration: PropTypes.string.isRequired
       })).isRequired})
   .isRequired}
 
 const rows = [
   {name: 'Team Meeting', space: 'Big Blue', date: '12-01-2022', details:
-    [{customerId: 11091700, time: '10:30', duration: '1 hour', price: '25€'}]},
+    [{customerId: 11091700, time: '10:30', duration: '1 hour'}]},
   {name: 'Meeting with VC', space: 'Big Meeting Room', date: '14-01-2022', details:
-  [{customerId: 11091700, time: '12:00', duration: '30 min', price: '45€'}]},
+  [{customerId: 11091700, time: '12:00', duration: '30 min'}]},
   {name: 'Call with Developer', space: 'Small Meeting Room', date: '17-01-2022', details:
-    [{customerId: 11091700, time: '11:30', duration: '1 hour', price: '65€'}]}]
+    [{customerId: 11091700, time: '11:30', duration: '1 hour'}]}]
 
 export default function Reservations() {
 
