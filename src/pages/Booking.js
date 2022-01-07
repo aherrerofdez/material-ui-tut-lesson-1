@@ -124,6 +124,7 @@ export default function Booking() {
               </Typography>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker
+                  sx={{p:2}}
                   value={date}
                   onChange={(newValue) => {setDate(newValue)}}
                   inputProps={{ 'aria-label': 'required date', 'aria-describedby': 'date picker' }}

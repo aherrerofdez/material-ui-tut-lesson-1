@@ -45,8 +45,8 @@ export default function Booking() {
                 <Typography sx = {{ fontWeight: 'bold', fontSize: '16pt', textAlign: 'center' }}>
                   {item.title} 
                 </Typography>
-                <Typography sx = {{ fontSize: '14pt', textAlign: 'center' }}>
-                  <Link href="/booking" sx = {{ fontWeight: 'bold' }}>Book</Link> this space now.
+                <Typography sx = {{ fontSize: '14pt', textAlign: 'center', my: 1 }}>
+                  <Link href="/booking" sx = {{ fontWeight: 'bold', py: 1.5 }}>Book</Link> this space now.
                 </Typography>
               </Grid>
             ))}

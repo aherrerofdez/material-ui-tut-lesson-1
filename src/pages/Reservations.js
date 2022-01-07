@@ -27,7 +27,9 @@ function Row(props) {
       <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
         <TableCell>
           <Tooltip title="Details">
-            <IconButton aria-label="open reservation details" size="small" onClick={() => setOpen(!open)}>
+            <IconButton aria-label="open reservation details" size="large" 
+              sx = {{ color: theme.palette.primary.main, '&:hover': { backgroundColor: theme.palette.btnhoverlight.main } }}
+              onClick={() => setOpen(!open)}>
               {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
             </IconButton>
           </Tooltip>
