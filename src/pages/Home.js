@@ -11,6 +11,8 @@ import { ThemeProvider } from '@mui/material/styles'
 import theme from '../components/Theme'
 import Breadcrumbs from '@mui/material/Breadcrumbs'
 import HomeIcon from '@mui/icons-material/Home'
+import ListItem from '@mui/material/ListItem'
+import List from '@mui/material/List'
 
 export default function Home() {
   return (
@@ -163,16 +165,30 @@ export default function Home() {
                   aria-controls="panel4a-content"
                   id="panel4a-header">
                   <Typography variant='h3' sx = {{ color: theme.palette.primary.main, fontWeight: 500, fontSize: '12pt' }}>
-                    Conferencing equipment
+                    Services and resources
                   </Typography>
                 </AccordionSummary>
                 
                 <AccordionDetails>
                   <Typography>
-                    Whether you need to project slides, connect your computer to a screen,
-                    record a presentation or simply listen to something, we got you covered. 
-                    We are ready to provide top-quality equipment for your needs. 
+                    Whether you need to connect your computer to a screen, record a presentation,
+                    print important documentation or simply get a snack, we got you covered. 
+                    We are ready to provide top-quality services and equipment for your needs, including:
                   </Typography>
+                  <List aria-label="list of services and resources">
+                    <ListItem aria-label="wifi" sx={{ py: 0, px: 2 }}>
+                      - Fast reliable Wi-Fi
+                    </ListItem>
+                    <ListItem aria-label="monitors" sx={{ py: 0, px: 2 }}>
+                      - High quality monitors
+                    </ListItem>
+                    <ListItem aria-label="printers and stationery" sx={{ py: 0, px: 2 }}>
+                      - Printers and stationery
+                    </ListItem>
+                    <ListItem aria-label="kitchen and snacks" sx={{ py: 0, px: 2 }}>
+                      - Fully equiped kitchen and snacks
+                    </ListItem>
+                  </List>
                 </AccordionDetails>
               </Accordion>
             </Grid>

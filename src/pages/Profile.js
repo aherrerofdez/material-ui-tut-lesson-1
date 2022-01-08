@@ -88,154 +88,158 @@ export default function Profile() {
                       sx = {{ mt: 5 }} 
                       aria-hidden="false"/>
             </Grid>
-
+            
             <Grid item xs={12} sm={6}>
-              <Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '18pt', color: theme.palette.primary.main }}>
-                Personal information
-              </Typography>
+              <Box role="region" aria-label="personal info">
+                <Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '18pt', color: theme.palette.primary.main }}>
+                  Personal information
+                </Typography>
 
-              <Typography sx = {{ pt: 2 }}>
-                Name Surname
-              </Typography>
+                <Typography sx = {{ pt: 2 }}>
+                  Name Surname
+                </Typography>
 
-              <Typography sx = {{ pt: 2 }}>
-                email@email.com
-              </Typography>
+                <Typography sx = {{ pt: 2 }}>
+                  email@email.com
+                </Typography>
 
-              <Typography sx = {{ pt: 2 }}>
-                Example Street, 24, City, Country
-              </Typography>
+                <Typography sx = {{ pt: 2 }}>
+                  Example Street, 24, City, Country
+                </Typography>
 
-              <Button 
-                    variant = "contained" 
-                    endIcon = {<EditIcon role="img" />}
-                    onClick={handleClickOpenEdit} 
-                    sx = {{ mb: 6, mt: 3, fontSize: '12pt', '&:hover': { backgroundColor: theme.palette.btnhover.main } }}
-                    aria-label='Edit personal information'>
-                Edit
-              </Button>
+                <Button 
+                      variant = "contained" 
+                      endIcon = {<EditIcon role="img" />}
+                      onClick={handleClickOpenEdit} 
+                      sx = {{ mb: 6, mt: 3, fontSize: '12pt', '&:hover': { backgroundColor: theme.palette.btnhover.main } }}
+                      aria-label='Edit personal information'>
+                  Edit
+                </Button>
 
-              <Box component="form" onSubmit={onSubmit}>
+                <Box component="form" onSubmit={onSubmit}>
+                  <Dialog
+                    role="form"
+                    open={openEdit}
+                    onClose={handleCloseEdit}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                    aria-label='form for editing your personal information'>
+
+                    <DialogTitle id="alert-dialog-title">
+                      Insert your data
+                    </DialogTitle>
+
+                    <DialogContent>
+                      <DialogContentText id="alert-dialog-name">
+                        Insert your updated full name here 
+                      </DialogContentText>
+                      
+                      <TextField
+                        required
+                        inputProps={{ 'aria-label': 'new full name', 'aria-describedby': 'new full name textfield' }}
+                        id="name_textfield"
+                        placeholder="Full name"
+                        fullWidth
+                        {...register("name")} />
+
+                      <DialogContentText id="alert-dialog-email">
+                        Insert your updated email here 
+                      </DialogContentText>
+
+                      <TextField
+                        required
+                        inputProps={{ 'aria-label': 'new email', 'aria-describedby': 'new email textfield' }}
+                        id="email_textfield"
+                        placeholder="Email"
+                        fullWidth  
+                        {...register("email")} />
+
+                      <DialogContentText id="alert-dialog-address">
+                        Insert your updated address here 
+                      </DialogContentText>
+
+                      <TextField
+                        required
+                        inputProps={{ 'aria-label': 'new address name', 'aria-describedby': 'new address textfield' }}
+                        id="address_textfield"
+                        placeholder="Address"
+                        fullWidth
+                        {...register("address")} />
+                    </DialogContent>
+                    
+                    <DialogActions>
+                      <Button onClick={handleCloseEdit} autoFocus aria-label='Cancel'
+                        sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
+                        Cancel
+                      </Button>
+
+                      <Button 
+                          type = 'submit' 
+                          variant = "contained" 
+                          onClick={handleCloseEdit} 
+                          autoFocus
+                          aria-label='Update Information'
+                          sx = {{ '&:hover': { backgroundColor: theme.palette.btnhover.main } }}>
+                        Update
+                      </Button>
+                    </DialogActions>
+                  </Dialog>
+                </Box>
+              </Box>
+
+              <Box role="region" aria-label="payment methods">
+                <Typography variant='h2' sx={{ mb: 3, fontWeight: 'bold', fontSize: '18pt', color: theme.palette.primary.main }}>
+                  Payment methods
+                </Typography>
+
+                <Card sx={{ maxWidth: 345, mb: 3 }}>
+                  <CardActionArea onClick={handleClickOpen}>
+                    <CardMedia
+                      component="img"
+                      height="140"
+                      src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                      alt="Credit card image"
+                      aria-hidden="true" />
+
+                    <CardContent>
+                      <Typography gutterBottom variant="h6" component="div">
+                        MasterCard
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Prepaid xxxxxx098
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+
                 <Dialog
-                  role="form"
-                  open={openEdit}
-                  onClose={handleCloseEdit}
-                  aria-labelledby="alert-dialog-title"
-                  aria-describedby="alert-dialog-description"
-                  aria-label='form for editing your personal information'>
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                    aria-label='Payment Method Information'>
 
                   <DialogTitle id="alert-dialog-title">
-                    Insert your data
+                    MasterCard xxxxxx098
                   </DialogTitle>
 
                   <DialogContent>
-                    <DialogContentText id="alert-dialog-name">
-                      Insert your updated full name here 
+                    <DialogContentText id="alert-dialog-description">
+                      This is your present payment method. Changing it is currently not supported. 
                     </DialogContentText>
-                    
-                    <TextField
-                      required
-                      inputProps={{ 'aria-label': 'new full name', 'aria-describedby': 'new full name textfield' }}
-                      id="name_textfield"
-                      placeholder="Full name"
-                      fullWidth
-                      {...register("name")} />
-
-                    <DialogContentText id="alert-dialog-email">
-                      Insert your updated email here 
-                    </DialogContentText>
-
-                    <TextField
-                      required
-                      inputProps={{ 'aria-label': 'new email', 'aria-describedby': 'new email textfield' }}
-                      id="email_textfield"
-                      placeholder="Email"
-                      fullWidth  
-                      {...register("email")} />
-
-                    <DialogContentText id="alert-dialog-address">
-                      Insert your updated address here 
-                    </DialogContentText>
-
-                    <TextField
-                      required
-                      inputProps={{ 'aria-label': 'new address name', 'aria-describedby': 'new address textfield' }}
-                      id="address_textfield"
-                      placeholder="Address"
-                      fullWidth
-                      {...register("address")} />
                   </DialogContent>
-                  
-                  <DialogActions>
-                    <Button onClick={handleCloseEdit} autoFocus aria-label='Cancel'
-                      sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                      Cancel
-                    </Button>
 
+                  <DialogActions>
                     <Button 
-                        type = 'submit' 
-                        variant = "contained" 
-                        onClick={handleCloseEdit} 
+                        onClick={handleClose} 
                         autoFocus
-                        aria-label='Update Information'
-                        sx = {{ '&:hover': { backgroundColor: theme.palette.btnhover.main } }}>
-                      Update
+                        aria-label='Close payment methods dialog'
+                        sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
+                      Close
                     </Button>
                   </DialogActions>
                 </Dialog>
-              </Box>
-
-              <Typography variant='h2' sx={{ mb: 3, fontWeight: 'bold', fontSize: '18pt', color: theme.palette.primary.main }}>
-                Payment methods
-              </Typography>
-
-              <Card sx={{ maxWidth: 345, mb: 3 }}>
-                <CardActionArea onClick={handleClickOpen}>
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                    alt="Credit card image"
-                    aria-hidden="true" />
-
-                  <CardContent>
-                    <Typography gutterBottom variant="h6" component="div">
-                      MasterCard
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Prepaid xxxxxx098
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-
-              <Dialog
-                  open={open}
-                  onClose={handleClose}
-                  aria-labelledby="alert-dialog-title"
-                  aria-describedby="alert-dialog-description"
-                  aria-label='Payment Method Information'>
-
-                <DialogTitle id="alert-dialog-title">
-                  MasterCard xxxxxx098
-                </DialogTitle>
-
-                <DialogContent>
-                  <DialogContentText id="alert-dialog-description">
-                    This is your present payment method. Changing it is currently not supported. 
-                  </DialogContentText>
-                </DialogContent>
-
-                <DialogActions>
-                  <Button 
-                      onClick={handleClose} 
-                      autoFocus
-                      aria-label='Close payment methods dialog'
-                      sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                    Close
-                  </Button>
-                </DialogActions>
-              </Dialog>                             
+              </Box>                             
             </Grid>       
           </Grid>
         </Box>

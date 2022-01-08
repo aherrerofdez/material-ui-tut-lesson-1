@@ -69,6 +69,7 @@ export default function Booking() {
       return false
     }
     if (flagD && flagT) {
+      e.currentTarget.submit()
       alert('Your reservation has been added!')
     }
   }
@@ -90,7 +91,6 @@ export default function Booking() {
           role="main"
           aria-label="main content area"
           id="main-content"
-          component="form" 
           sx={{ '& .MuiTextField-root': { mt: 2 }, flexGrow: 1 }}
           onSubmit={(e) => {onSubmit(e)}} >
 
@@ -103,14 +103,15 @@ export default function Booking() {
             Complete the following form to book a space
           </Typography>
 
-          <Grid role="form" aria-label="form for booking a space" container spacing={0}>
+          <Grid role="form" component="form" aria-label="form for booking a space" container spacing={0}>
             <Grid item xs={12} sm={4} sx = {{ px: 5, mb: 5 }}>
               <Typography variant='h3' sx = {{fontSize: '12pt', fontWeight: 'bold'}}>
                 Reservation name
               </Typography>
               <TextField 
-                required id="name"
-                inputProps={{ 'aria-label': 'required reservation name', 'aria-describedby': 'reservation name textfield' }}
+                required
+                id="name"
+                inputProps={{ 'aria-label': 'required reservation name', 'aria-describedby': 'reservation name textfield', 'aria-required': 'true' }}
                 placeholder="Insert a name for your reservation"
                 helperText="Required*"
                 FormHelperTextProps={{ style: { color: theme.palette.helpertxt.main }}}
@@ -123,8 +124,9 @@ export default function Booking() {
                 Select a space
               </Typography>
               <Box sx={{ display: 'flex' }}>
-                <FormControl required component="fieldset" sx={{ mt: '5px' }} variant="standard">
-                  <RadioGroup required name="space" value={space} onChange={handleChangeSpace}>
+                <FormControl required sx={{ mt: '5px' }} variant="standard">
+                  <RadioGroup required name="space" value={space} onChange={handleChangeSpace}
+                    aria-describedby="radiogroup for selecting the space" aria-required="true">
                     <FormControlLabel value="big_blue" label="Big Blue Co-Working Space"
                       control={<Radio required={true}
                         inputProps={{ 'aria-label': 'big blue co-working space', 'aria-describedby': 'big blue space radio button' }} />} />
@@ -158,7 +160,7 @@ export default function Booking() {
                   sx={{p:2}}
                   value={date}
                   onChange={(newValue) => {setDate(newValue)}}
-                  inputProps={{ 'aria-label': 'required date', 'aria-describedby': 'date picker' }}
+                  inputProps={{ 'aria-label': 'required date', 'aria-describedby': 'date picker', 'aria-required': 'true' }}
                   renderInput={params => <TextField {...params} required 
                   helperText="Required*" FormHelperTextProps={{ style: { color: theme.palette.helpertxt.main }}}
                   {...register("date")} />}/>
@@ -173,7 +175,7 @@ export default function Booking() {
                 <TimePicker 
                   value={time}
                   onChange={(newValue) => {setTime(newValue)}}
-                  inputProps={{ 'aria-label': 'required time', 'aria-describedby': 'time picker' }}
+                  inputProps={{ 'aria-label': 'required time', 'aria-describedby': 'time picker', 'aria-required': 'true' }}
                   renderInput={(params) => <TextField {...params} 
                     required fullWidth 
                     helperText="Required*" FormHelperTextProps={{ style: { color: theme.palette.helpertxt.main }}}
@@ -186,11 +188,12 @@ export default function Booking() {
                 Select the duration 
               </Typography>
               <Box sx={{ minWidth: 120 }}>
-                <FormControl fullWidth required>
+                <FormControl fullWidth>
                   <Select
+                    required
                     id="duration-selector"
                     value={duration}
-                    aria-describedby='duration combobox'
+                    aria-describedby='required duration combobox'
                     displayEmpty
                     {...register("duration")}
                     onChange={handleChangeDuration}>
