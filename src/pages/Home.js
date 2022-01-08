@@ -28,7 +28,7 @@ export default function Home() {
         <Box role="main" id="main-content" sx={{ flexGrow: 1, mt: 5, mx: 5, mb: 2 }}>
           <Grid container spacing={6}>
             <Grid item xs={12} sm={6}>
-              <Typography variant='h1' sx={{ fontWeight: 'bold', fontSize: '18pt' }}>
+              <Typography role="banner" variant='h1' sx={{ fontWeight: 'bold', fontSize: '18pt' }}>
                 Welcome to <br></br>
                 <span style={{ color: theme.palette.primary.main, fontSize: '37pt' }}> WorCo </span>
               </Typography>

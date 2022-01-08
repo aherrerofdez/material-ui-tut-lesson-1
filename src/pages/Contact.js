@@ -53,7 +53,7 @@ export default function Contact() {
           sx={{ '& .MuiTextField-root': { mt: 2 }, flexGrow: 1 }}
           onSubmit={onSubmit} >
           
-          <Typography variant='h1' sx = {{pl: 5, pt: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
+          <Typography role="banner" variant='h1' sx = {{pl: 5, pt: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
             Contact us
           </Typography>
           
@@ -106,13 +106,13 @@ export default function Contact() {
                 Send
               </Button>
             </Grid>
+          </Grid>
 
-            <Grid item xs={12}>
-              <Typography variant='h2' sx={{ pl: 5, mb: 3, mt: 8, fontWeight: 'bold', fontSize: '20pt', color: theme.palette.primary.main }}>
-                Find us on social media: 
-              </Typography>
-            </Grid>
+          <Typography variant='h2' sx={{ pl: 5, mb: 3, mt: 8, fontWeight: 'bold', fontSize: '20pt', color: theme.palette.primary.main }}>
+            Find us on social media: 
+          </Typography>
 
+          <Grid container spacing={0}>
             <Grid item xs={12} sx = {{ mx: 5, mb: 5, ml: 3}}>
               <Tooltip title="Instagram">
                 <Button href="https://www.instagram.com/accounts/login/" aria-label='Instagram'

@@ -72,7 +72,7 @@ export default function Profile() {
         </Breadcrumbs>
         
         <Box role="main" id="main-content" sx={{ flexGrow: 1, mt: 3, mx: 5, mb: 2 }}>
-          <Typography variant='h1' sx = {{ mb: 3, fontSize: '24pt', fontWeight: 'bold' }}>
+          <Typography role="banner" variant='h1' sx = {{ mb: 3, fontSize: '24pt', fontWeight: 'bold' }}>
             Your profile
           </Typography>
           

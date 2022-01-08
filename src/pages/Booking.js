@@ -93,7 +93,7 @@ export default function Booking() {
           sx={{ '& .MuiTextField-root': { mt: 2 }, flexGrow: 1 }}
           onSubmit={(e) => {onSubmit(e)}} >
 
-          <Typography variant='h1' sx = {{pl: 5, pt: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }}>
+          <Typography role="banner" variant='h1' sx = {{pl: 5, pt: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }}>
             Book a space
           </Typography>
 

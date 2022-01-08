@@ -133,7 +133,7 @@ export default function Reservations() {
         </Breadcrumbs>
 
         <TableContainer role="main" id="main-content" component={Paper} sx={{ }}>
-          <Typography variant='h1' sx = {{pl: 5, py: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
+          <Typography role="banner" variant='h1' sx = {{pl: 5, py: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
             Your reservations
           </Typography>
           <Table aria-label="collapsible table with your reservations">
