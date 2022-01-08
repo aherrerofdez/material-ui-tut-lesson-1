@@ -70,14 +70,13 @@ export default function Booking() {
                 <Typography variant='h2' sx = {{ mb: 1, fontWeight: 'bold', fontSize: '14pt', textAlign: 'center' }}>
                   {item.title} 
                 </Typography>
-                <ImageListItem key={item.img}>
-                  <img
-                    src={`${item.img}?w=248&fit=crop&auto=format`}
-                    srcSet={`${item.img}?w=248&fit=crop&auto=format`}
-                    alt={item.title}
-                    loading= 'lazy'
-                    aria-hidden= "true" />
-                </ImageListItem>
+                <img
+                  src={`${item.img}?w=248&fit=crop&auto=format`}
+                  srcSet={`${item.img}?w=248&fit=crop&auto=format`}
+                  alt={item.title}
+                  loading= 'lazy'
+                  aria-hidden= "true"
+                  style={{ width: "100%", height: "50%" }} />
                 <Typography sx = {{ fontSize: '11pt', textAlign: 'center', pt: 1 }}>
                   Maximum capacity: {item.capacity} people.
                 </Typography>
