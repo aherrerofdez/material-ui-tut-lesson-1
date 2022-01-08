@@ -59,7 +59,8 @@ export default function Booking() {
                     src={`${item.img}?w=248&fit=crop&auto=format`}
                     srcSet={`${item.img}?w=248&fit=crop&auto=format`}
                     alt={item.title}
-                    loading= 'lazy' />
+                    loading= 'lazy'
+                    aria-hidden= "true" />
                 </ImageListItem>
                 <Typography sx = {{ fontSize: '11pt', textAlign: 'center', px: 2, mb: 5 }}>
                   <Link href="/booking" sx = {{ fontWeight: 'bold', py: 2 }}>Book</Link> the {item.title.toLowerCase()} now.

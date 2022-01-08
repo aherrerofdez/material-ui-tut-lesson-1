@@ -47,7 +47,8 @@ export default function Home() {
                     alt= 'Big Blue Co-Working Space'
                     loading="lazy"
                     width = {'100%'}
-                    sx = {{ mt: 5 }} />
+                    sx = {{ mt: 5 }}
+                    aria-hidden = "true" />
             </Grid>
 
             <Grid item xs={12}>
@@ -57,7 +58,7 @@ export default function Home() {
             </Grid>
 
             <Grid item xs={12} sm={4}>
-              <Typography variant='h3' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt' }}>
+              <Typography variant='h3' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt', mb: 1 }}>
                 Flexible  
               </Typography>
               <Typography sx = {{ textAlign: 'center' }}>
@@ -66,7 +67,7 @@ export default function Home() {
             </Grid>
 
             <Grid item xs={12} sm={4}>           
-              <Typography variant='h3' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt' }}>
+              <Typography variant='h3' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt', mb: 1 }}>
                 Secure  
               </Typography>
               <Typography sx = {{ textAlign: 'center' }}>
@@ -75,7 +76,7 @@ export default function Home() {
             </Grid>
 
             <Grid item xs={12} sm={4}>
-              <Typography variant='h3' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt' }}>
+              <Typography variant='h3' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt', mb: 1 }}>
                 Well-equipped  
               </Typography>
               <Typography sx = {{ textAlign: 'center' }}>
@@ -89,7 +90,8 @@ export default function Home() {
                 alt= 'Big Meeting Room'
                 loading="lazy"
                 width = {'100%'}
-                sx = {{ mt: 5 }} />
+                sx = {{ mt: 5 }}
+                aria-hidden = "true" />
             </Grid>
 
             <Grid item xs={12} sm={6} sx={{ mt: 4 }}>
