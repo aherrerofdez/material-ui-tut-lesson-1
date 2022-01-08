@@ -188,16 +188,16 @@ export default function Booking() {
               <Box sx={{ minWidth: 120 }}>
                 <FormControl fullWidth required>
                   <Select
-                    id="duration"
+                    id="duration-selector"
                     value={duration}
+                    aria-describedby='duration combobox'
                     displayEmpty
                     {...register("duration")}
-                    onChange={handleChangeDuration}
-                    inputProps={{ 'aria-label': 'required duration', 'aria-describedby': 'duration combobox' }}>
-                    <MenuItem value={'30 minutes'}> 30 minutes </MenuItem>
-                    <MenuItem value={'1 hour'}> 1 hour </MenuItem>
-                    <MenuItem value={'1 hour 30 minutes'}> 1 hour 30 minutes </MenuItem>
-                    <MenuItem value={'2 hours'}> 2 hours </MenuItem>
+                    onChange={handleChangeDuration}>
+                    <MenuItem value='30 minutes'> half an hour </MenuItem>
+                    <MenuItem value='1 hour'> one hour </MenuItem>
+                    <MenuItem value='1 hour 30 minutes'> one hour and a half </MenuItem>
+                    <MenuItem value='2 hours'> two hours </MenuItem>
                   </Select>
                   <FormHelperText sx = {{ color: theme.palette.helpertxt.main }}> Required* </FormHelperText>
                 </FormControl>

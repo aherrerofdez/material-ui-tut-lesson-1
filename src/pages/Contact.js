@@ -68,7 +68,7 @@ export default function Contact() {
               <Typography variant='h3' sx = {{fontSize: '12pt', fontWeight: 'bold'}}> Full name </Typography>
               <TextField
                   required
-                  id="name"
+                  inputProps={{ 'aria-label': 'required full name', 'aria-describedby': 'full name textfield' }}
                   placeholder="Insert your full name"
                   helperText="Required*"
                   FormHelperTextProps={{ style: { color: theme.palette.helpertxt.main }}}
@@ -80,6 +80,7 @@ export default function Contact() {
               <Typography variant='h3' sx = {{fontSize: '12pt', fontWeight: 'bold'}}> Email address </Typography>
               <TextField
                   required
+                  inputProps={{ 'aria-label': 'required email address', 'aria-describedby': 'email address textfield' }}
                   fullWidth
                   id="email"
                   placeholder="Insert your email address"
@@ -92,6 +93,7 @@ export default function Contact() {
               <Typography variant='h3' sx = {{fontSize: '12pt', fontWeight: 'bold'}}> Your message </Typography>
               <TextField
                   required
+                  inputProps={{ 'aria-label': 'required message', 'aria-describedby': 'message textfield' }}
                   fullWidth
                   id="message"
                   placeholder="Insert your message here"

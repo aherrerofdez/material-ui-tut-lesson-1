@@ -134,6 +134,7 @@ export default function Profile() {
                     
                     <TextField
                       required
+                      inputProps={{ 'aria-label': 'new full name', 'aria-describedby': 'new full name textfield' }}
                       id="name_textfield"
                       placeholder="Full name"
                       fullWidth
@@ -145,6 +146,7 @@ export default function Profile() {
 
                     <TextField
                       required
+                      inputProps={{ 'aria-label': 'new email', 'aria-describedby': 'new email textfield' }}
                       id="email_textfield"
                       placeholder="Email"
                       fullWidth  
@@ -156,6 +158,7 @@ export default function Profile() {
 
                     <TextField
                       required
+                      inputProps={{ 'aria-label': 'new address name', 'aria-describedby': 'new address textfield' }}
                       id="address_textfield"
                       placeholder="Address"
                       fullWidth
