@@ -121,28 +121,28 @@ export default function Contact() {
               <Tooltip title="Instagram">
                 <Button href="https://www.instagram.com/accounts/login/" aria-label='Instagram'
                   sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                  <InstagramIcon role="img" fontSize="large"/>
+                  <InstagramIcon role="img" fontSize="large" aria-hidden='false' />
                 </Button>
               </Tooltip>
 
               <Tooltip title="Facebook">
                 <Button href="https://m.facebook.com/home.php" aria-label='Facebook'
                   sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                  <FacebookIcon role="img" fontSize="large" />
+                  <FacebookIcon role="img" fontSize="large" aria-hidden='false' />
                 </Button>
               </Tooltip>
 
               <Tooltip title="Linkedin">
                 <Button href="https://www.linkedin.com/" aria-label='LinkedIn'
                   sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                  <LinkedInIcon role="img" fontSize="large" />
+                  <LinkedInIcon role="img" fontSize="large" aria-hidden='false' />
                 </Button>
               </Tooltip>
 
               <Tooltip title="Twitter">
-                <Button href="https://mobile.twitter.com/login" aria-label='Twitter'
+                <Button href="https://mobile.twitter.com/login" aria-label='Twitter' 
                   sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                  <TwitterIcon role="img" fontSize="large" />
+                  <TwitterIcon role="img" fontSize="large" aria-hidden='false' />
                 </Button>
                 </Tooltip>
             </Grid>

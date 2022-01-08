@@ -85,7 +85,8 @@ export default function Profile() {
                       alt= 'Your profile headshot'
                       loading="lazy"
                       width = {'100%'}
-                      sx = {{ mt: 5 }} />
+                      sx = {{ mt: 5 }} 
+                      aria-hidden="false"/>
             </Grid>
 
             <Grid item xs={12} sm={6}>
@@ -194,7 +195,8 @@ export default function Profile() {
                     component="img"
                     height="140"
                     src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                    alt="Credit card image"/>
+                    alt="Credit card image"
+                    aria-hidden="true" />
 
                   <CardContent>
                     <Typography gutterBottom variant="h6" component="div">
