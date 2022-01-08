@@ -108,11 +108,12 @@ export default function Booking() {
               </Typography>
               <TextField 
                 required id="name"
+                inputProps={{ 'aria-label': 'required reservation name', 'aria-describedby': 'reservation name textfield' }}
                 placeholder="Insert a name for your reservation"
                 helperText="Required*"
                 FormHelperTextProps={{ style: { color: theme.palette.helpertxt.main }}}
                 fullWidth
-                {...register("fullName", {required: true})} />
+                {...register("reservationName", {required: true})} />
             </Grid>
 
             <Grid item xs={12} sm={4} sx = {{ px: 5, mb: 5 }}>
@@ -121,14 +122,25 @@ export default function Booking() {
               </Typography>
               <Box sx={{ display: 'flex' }}>
                 <FormControl required component="fieldset" sx={{ mt: '5px' }} variant="standard">
-                  <RadioGroup aria-label="space" name="space" value={space} 
-                    onChange={handleChangeSpace} >
-                    <FormControlLabel value="big_blue" control={<Radio required={true}/>} label="Big Blue Co-Working Space" />
-                    <FormControlLabel value="plants" control={<Radio required={true}/>} label="Plants Co-Working Space" />
-                    <FormControlLabel value="small_space" control={<Radio required={true}/>} label="Small Co-Working Space" />
-                    <FormControlLabel value="open" control={<Radio required={true}/>} label="Open Co-Working Space" />
-                    <FormControlLabel value="big_meeting" control={<Radio required={true}/>} label="Big Meeting Room" />
-                    <FormControlLabel value="small_meeting" control={<Radio required={true}/>} label="Small Meeting Room" />
+                  <RadioGroup required name="space" value={space} onChange={handleChangeSpace}>
+                    <FormControlLabel value="big_blue" label="Big Blue Co-Working Space"
+                      control={<Radio required={true}
+                        inputProps={{ 'aria-label': 'big blue co-working space', 'aria-describedby': 'big blue space radio button' }} />} />
+                    <FormControlLabel value="plants" label="Plants Co-Working Space"
+                      control={<Radio required={true}
+                        inputProps={{ 'aria-label': 'plants co-working space', 'aria-describedby': 'plants space radio button' }} />} />
+                    <FormControlLabel value="small_space" label="Small Co-Working Space"
+                      control={<Radio required={true}
+                        inputProps={{ 'aria-label': 'small co-working space', 'aria-describedby': 'small space radio button' }} />} />
+                    <FormControlLabel value="open" label="Open Co-Working Space" 
+                      control={<Radio required={true}
+                        inputProps={{ 'aria-label': 'open co-working space', 'aria-describedby': 'open space radio button' }} />} />
+                    <FormControlLabel value="big_meeting" label="Big Meeting Room"
+                      control={<Radio required={true}
+                        inputProps={{ 'aria-label': 'big meeting room', 'aria-describedby': 'big meeting room radio button' }} />} />
+                    <FormControlLabel value="small_meeting" label="Small Meeting Room"
+                      control={<Radio required={true}
+                        inputProps={{ 'aria-label': 'small meeting room', 'aria-describedby': 'small meeting room radio button' }} />} />
                   </RadioGroup>
                   <FormHelperText sx={{ color: theme.palette.helpertxt.main }}> Required* </FormHelperText>
                 </FormControl>
@@ -179,7 +191,7 @@ export default function Booking() {
                     displayEmpty
                     {...register("duration")}
                     onChange={handleChangeDuration}
-                    inputProps={{ 'aria-label': 'required duration' }}>
+                    inputProps={{ 'aria-label': 'required duration', 'aria-describedby': 'duration combobox' }}>
                     <MenuItem value={'30 minutes'}> 30 minutes </MenuItem>
                     <MenuItem value={'1 hour'}> 1 hour </MenuItem>
                     <MenuItem value={'1 hour 30 minutes'}> 1 hour 30 minutes </MenuItem>
