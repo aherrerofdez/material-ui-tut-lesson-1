@@ -65,7 +65,7 @@ export default function Profile() {
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small"/>}
           sx = {{ color: theme.palette.primary.main, ml: 3, mt: 1 }}>
           <Link underline="hover" href="/"> 
-            {<HomeIcon sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
+            {<HomeIcon role="img" sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
             WorCo Home
           </Link>
           <Typography sx = {{ color: theme.palette.primary.main }}> Profile </Typography>
@@ -107,7 +107,7 @@ export default function Profile() {
 
               <Button 
                     variant = "contained" 
-                    endIcon = {<EditIcon />}
+                    endIcon = {<EditIcon role="img" />}
                     onClick={handleClickOpenEdit} 
                     sx = {{ mb: 6, mt: 3, fontSize: '12pt', '&:hover': { backgroundColor: theme.palette.btnhover.main } }}
                     aria-label='Edit personal information'>

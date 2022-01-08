@@ -126,7 +126,7 @@ export default function Reservations() {
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small"/>}
           sx = {{ color: theme.palette.primary.main, ml: 3, mt: 1 }}>
           <Link underline="hover" href="/"> 
-            {<HomeIcon sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
+            {<HomeIcon role="img" sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
             WorCo Home
           </Link>
           <Typography sx = {{ color: theme.palette.primary.main }}> Reservations </Typography>

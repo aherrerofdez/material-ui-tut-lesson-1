@@ -40,7 +40,7 @@ export default function Contact() {
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small"/>}
           sx = {{ color: theme.palette.primary.main ,ml: 3, mt: 1 }}>
           <Link underline="hover" href="/"> 
-            {<HomeIcon sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
+            {<HomeIcon role="img" sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
             WorCo Home
           </Link>
           <Typography sx = {{ color: theme.palette.primary.main }}> Contact us </Typography>
@@ -105,7 +105,7 @@ export default function Contact() {
             </Grid>
 
             <Grid item xs={12} sx = {{ px: 5, pt: 4 }}>
-              <Button type = 'submit' variant="contained" endIcon={<SendIcon />} aria-label='Send Message'
+              <Button type = 'submit' variant="contained" endIcon={<SendIcon role="img"/>} aria-label='Send Message'
                 sx = {{ fontSize: '12pt', '&:hover': { backgroundColor: theme.palette.btnhover.main } }}>
                 Send
               </Button>
@@ -121,28 +121,28 @@ export default function Contact() {
               <Tooltip title="Instagram">
                 <Button href="https://www.instagram.com/accounts/login/" aria-label='Instagram'
                   sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                  <InstagramIcon fontSize="large"/>
+                  <InstagramIcon role="img" fontSize="large"/>
                 </Button>
               </Tooltip>
 
               <Tooltip title="Facebook">
                 <Button href="https://m.facebook.com/home.php" aria-label='Facebook'
                   sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                  <FacebookIcon fontSize="large" />
+                  <FacebookIcon role="img" fontSize="large" />
                 </Button>
               </Tooltip>
 
               <Tooltip title="Linkedin">
                 <Button href="https://www.linkedin.com/" aria-label='LinkedIn'
                   sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                  <LinkedInIcon fontSize="large" />
+                  <LinkedInIcon role="img" fontSize="large" />
                 </Button>
               </Tooltip>
 
               <Tooltip title="Twitter">
                 <Button href="https://mobile.twitter.com/login" aria-label='Twitter'
                   sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                  <TwitterIcon fontSize="large" />
+                  <TwitterIcon role="img" fontSize="large" />
                 </Button>
                 </Tooltip>
             </Grid>

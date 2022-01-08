@@ -85,7 +85,7 @@ const ResponsiveAppBar = () => {
                   aria-haspopup="true"
                   onClick={handleOpenNavMenu}
                   color="inherit" >
-                  <MenuIcon />
+                  <MenuIcon role="img"/>
                 </IconButton>
               </Tooltip>
 
@@ -128,7 +128,7 @@ const ResponsiveAppBar = () => {
                   aria-haspopup="true"
                   onClick={handleOpenUserMenu}
                   sx={{ p: 1 }}>
-                  <Avatar sx={{ backgroundColor: 'common.white', color: theme.palette.primary.main, fontWeight: 'bold',
+                  <Avatar role="img" sx={{ backgroundColor: 'common.white', color: theme.palette.primary.main, fontWeight: 'bold',
                     '&:hover': { backgroundColor: theme.palette.btnhoverlight.main } }} />
                 </IconButton>
               </Tooltip>
