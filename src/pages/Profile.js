@@ -70,6 +70,7 @@ export default function Profile() {
           </Link>
           <Typography sx = {{ color: theme.palette.primary.main }}> Profile </Typography>
         </Breadcrumbs>
+        
         <Box role="main" id="main-content" sx={{ flexGrow: 1, mt: 3, mx: 5, mb: 2 }}>
           <Typography variant='h1' sx = {{ mb: 3, fontSize: '24pt', fontWeight: 'bold' }}>
             Your profile
