@@ -48,12 +48,14 @@ export default function Contact() {
 
         <Box 
           role="main"
+          aria-label="main content area"
           id="main-content"
           component="form"
           sx={{ '& .MuiTextField-root': { mt: 2 }, flexGrow: 1 }}
           onSubmit={onSubmit} >
           
-          <Typography role="banner" variant='h1' sx = {{pl: 5, pt: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
+          <Typography role="banner" aria-label="main content title" variant='h1' 
+            sx = {{pl: 5, pt: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
             Contact us
           </Typography>
           
@@ -61,7 +63,7 @@ export default function Contact() {
               Send us a message by completing this form
           </Typography>
 
-          <Grid role="form" container spacing={0}>
+          <Grid role="form" aria-label="form for contacting us" container spacing={0}>
             <Grid item xs={12} sm={6} sx = {{ px: 5, mb: 4 }}>
               <Typography variant='h3' sx = {{fontSize: '12pt', fontWeight: 'bold'}}> Full name </Typography>
               <TextField

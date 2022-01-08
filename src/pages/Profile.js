@@ -71,8 +71,10 @@ export default function Profile() {
           <Typography sx = {{ color: theme.palette.primary.main }}> Profile </Typography>
         </Breadcrumbs>
         
-        <Box role="main" id="main-content" sx={{ flexGrow: 1, mt: 3, mx: 5, mb: 2 }}>
-          <Typography role="banner" variant='h1' sx = {{ mb: 3, fontSize: '24pt', fontWeight: 'bold' }}>
+        <Box role="main" id="main-content" aria-label="main content area"
+          sx={{ flexGrow: 1, mt: 3, mx: 5, mb: 2 }}>
+          <Typography role="banner" variant='h1' aria-label="main content title" 
+            sx = {{ mb: 3, fontSize: '24pt', fontWeight: 'bold' }}>
             Your profile
           </Typography>
           
@@ -108,17 +110,18 @@ export default function Profile() {
                     endIcon = {<EditIcon />}
                     onClick={handleClickOpenEdit} 
                     sx = {{ mb: 6, mt: 3, fontSize: '12pt', '&:hover': { backgroundColor: theme.palette.btnhover.main } }}
-                    aria-label='Edit Personal Information'>
+                    aria-label='Edit personal information'>
                 Edit
               </Button>
 
               <Box component="form" onSubmit={onSubmit}>
                 <Dialog
+                  role="form"
                   open={openEdit}
                   onClose={handleCloseEdit}
                   aria-labelledby="alert-dialog-title"
                   aria-describedby="alert-dialog-description"
-                  aria-label='Information Edit Form'>
+                  aria-label='form for editing your personal information'>
 
                   <DialogTitle id="alert-dialog-title">
                     Insert your data

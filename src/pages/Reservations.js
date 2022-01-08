@@ -132,8 +132,10 @@ export default function Reservations() {
           <Typography sx = {{ color: theme.palette.primary.main }}> Reservations </Typography>
         </Breadcrumbs>
 
-        <TableContainer role="main" id="main-content" component={Paper} sx={{ }}>
-          <Typography role="banner" variant='h1' sx = {{pl: 5, py: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
+        <TableContainer role="main" id="main-content" aria-label="main content area"
+          component={Paper} sx={{ }}>
+          <Typography role="banner" variant='h1' aria-label="main content title"
+            sx = {{pl: 5, py: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
             Your reservations
           </Typography>
           <Table aria-label="collapsible table with your reservations">

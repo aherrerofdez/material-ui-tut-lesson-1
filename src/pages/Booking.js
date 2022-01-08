@@ -88,12 +88,14 @@ export default function Booking() {
 
         <Box
           role="main"
+          aria-label="main content area"
           id="main-content"
           component="form" 
           sx={{ '& .MuiTextField-root': { mt: 2 }, flexGrow: 1 }}
           onSubmit={(e) => {onSubmit(e)}} >
 
-          <Typography role="banner" variant='h1' sx = {{pl: 5, pt: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }}>
+          <Typography role="banner" variant='h1' aria-label="main content title"
+            sx = {{pl: 5, pt: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }}>
             Book a space
           </Typography>
 
@@ -101,7 +103,7 @@ export default function Booking() {
             Complete the following form to book a space
           </Typography>
 
-          <Grid role="form" container spacing={0}>
+          <Grid role="form" aria-label="form for booking a space" container spacing={0}>
             <Grid item xs={12} sm={4} sx = {{ px: 5, mb: 5 }}>
               <Typography variant='h3' sx = {{fontSize: '12pt', fontWeight: 'bold'}}>
                 Reservation name
