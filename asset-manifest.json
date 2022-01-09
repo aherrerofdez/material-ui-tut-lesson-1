@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/material-ui-website/static/css/main.e6c13ad2.css",
-    "main.js": "/material-ui-website/static/js/main.fbb63271.js",
+    "main.js": "/material-ui-website/static/js/main.3d67b3f2.js",
     "static/js/787.9509ee62.chunk.js": "/material-ui-website/static/js/787.9509ee62.chunk.js",
     "index.html": "/material-ui-website/index.html",
     "main.e6c13ad2.css.map": "/material-ui-website/static/css/main.e6c13ad2.css.map",
-    "main.fbb63271.js.map": "/material-ui-website/static/js/main.fbb63271.js.map",
+    "main.3d67b3f2.js.map": "/material-ui-website/static/js/main.3d67b3f2.js.map",
     "787.9509ee62.chunk.js.map": "/material-ui-website/static/js/787.9509ee62.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.fbb63271.js"
+    "static/js/main.3d67b3f2.js"
   ]
 }
