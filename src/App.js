@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="material-ui-website/#">
+        <Route path="material-ui-website/#">
           <Home />
         </Route>
         <Route path="material-ui-website/#/spaces">

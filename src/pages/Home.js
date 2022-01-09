@@ -21,7 +21,7 @@ export default function Home() {
         <Header />
         <Breadcrumbs aria-label="breadcrumb" 
           sx = {{ color: theme.palette.primary.main, ml: 3, mt: 1 }}>
-          <Link underline="hover" href="material-ui-website/#"> 
+          <Link underline="hover" href="/"> 
             {<HomeIcon role="img" sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
             WorCo Home
           </Link>
