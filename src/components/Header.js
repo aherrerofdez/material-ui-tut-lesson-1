@@ -48,7 +48,7 @@ const ResponsiveAppBar = () => {
           <Toolbar disableGutters>
             {/* Displays LOGO in desktop version */}
             <Tooltip title="Home">
-              <Link key="home" href="/">
+              <Link key="home" href="https://aherrerofdez.github.io/material-ui-website/#/">
                 <Typography
                   variant="h6"
                   color="common.white"
@@ -112,7 +112,8 @@ const ResponsiveAppBar = () => {
 
             {/* Displays LOGO in mobile version */}
             <Tooltip title="Home">
-              <Link key="home-mobile" href="/" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
+              <Link key="home-mobile" href="https://aherrerofdez.github.io/material-ui-website/#/"
+                sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
                 <Typography variant="h6" color="common.white" noWrap component="div">
                   WorCo
                 </Typography>
