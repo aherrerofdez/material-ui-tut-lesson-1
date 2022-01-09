@@ -55,8 +55,6 @@ export default function Booking() {
           <Typography sx = {{ color: theme.palette.primary.main }}> Spaces </Typography>
         </Breadcrumbs>
 
-        
-
         <Grid role="main" id="main-content" aria-label="main content area" container spacing={0}>
           <Grid item xs={12}>  
             <Typography role="banner" variant='h1' aria-label="main content title"
