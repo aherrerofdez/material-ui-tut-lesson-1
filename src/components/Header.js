@@ -48,7 +48,7 @@ const ResponsiveAppBar = () => {
           <Toolbar disableGutters>
             {/* Displays LOGO in desktop version */}
             <Tooltip title="Home">
-              <Link key="home" href="material-ui-website/#">
+              <Link key="home" href="/">
                 <Typography
                   variant="h6"
                   color="common.white"
