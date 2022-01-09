@@ -120,7 +120,8 @@ export default function Home() {
                     In WorCo, you can find large meeting rooms, small and intimate places 
                     to work alone, rooms for collaboration and much more.
                     <br></br><br></br>
-                    Check out all of our <Link href="/spaces">spaces</Link>.
+                    Check out all of our 
+                      <Link href="https://aherrerofdez.github.io/material-ui-website/#/spaces"> spaces </Link>.
                   </Typography>
                 </AccordionDetails>
               </Accordion>
