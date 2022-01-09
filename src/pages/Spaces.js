@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import Header from '../components/Header'
-import ImageListItem from '@mui/material/ImageListItem'
 import Grid from '@mui/material/Grid'
 import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
@@ -58,7 +57,7 @@ export default function Booking() {
 
         
 
-        <Grid role="main" id="main-content" aria-labe="main content area" container spacing={0}>
+        <Grid role="main" id="main-content" aria-label="main content area" container spacing={0}>
           <Grid item xs={12}>  
             <Typography role="banner" variant='h1' aria-label="main content title"
               sx = {{pl: 5, py: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
