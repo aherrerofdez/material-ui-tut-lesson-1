@@ -64,7 +64,11 @@ export default function Contact() {
           </Typography>
 
           <Typography sx={{ px: 5, mt: 2, mb: 4, fontSize: '12pt', maxWidth: '35em' }}>
-            After completing the form, press the button "SEND" to submit your message and a confirmation notification will appear on your screen.
+            All of the fields are required to be able to send your message. These fields include your name, your
+            email and the message you want to send us.
+            <br></br> <br></br>
+            After completing the form, press the button "SEND" to submit your message and a confirmation 
+            notification will appear on your screen.
           </Typography>
 
           <Grid role="form" aria-label="form for contacting us" container spacing={0}>

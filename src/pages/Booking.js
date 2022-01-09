@@ -105,7 +105,12 @@ export default function Booking() {
           </Typography>
 
           <Typography sx={{ px: 5, mt: 2, mb: 4, fontSize: '12pt', maxWidth: '36em' }}>
-            After completing the form, press the button "BOOK" to submit your reservation and a successful message will appear.
+            All of the fields are required to be able to submit the form. These fields include a name that describes 
+            the purpose of your reservation, the space you want to book, the date when you want to use the space,
+            the starting time for your reservation, and its duration.
+            <br></br> <br></br>
+            After completing the form, press the button "BOOK" to submit your reservation and a successful message 
+            will appear.
           </Typography>
 
           <Grid role="form" component="form" aria-label="form for booking a space" container spacing={0}>
