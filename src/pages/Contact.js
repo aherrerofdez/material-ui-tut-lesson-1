@@ -60,11 +60,11 @@ export default function Contact() {
           </Typography>
           
           <Typography variant='h2' sx={{ px: 5, mt: 2, fontWeight: 'bold', fontSize: '18pt', color: theme.palette.primary.main }}>
-              Send us a message by completing this form
+            Send us a message by completing this form
           </Typography>
 
-          <Typography sx={{ px: 5, mt: 2, mb: 4, fontSize: '12pt' }}>
-            After completing the form, press the button "SEND", in order to submit your message and a confirmation notification will appear on your screen.
+          <Typography sx={{ px: 5, mt: 2, mb: 4, fontSize: '12pt', maxWidth: '35em' }}>
+            After completing the form, press the button "SEND" to submit your message and a confirmation notification will appear on your screen.
           </Typography>
 
           <Grid role="form" aria-label="form for contacting us" container spacing={0}>

@@ -37,10 +37,13 @@ export default function Home() {
               </Typography>
 
               <Typography sx = {{ pt: 5 }}>
-                We offer amazing co-working spaces that will meet everyone's needs. 
-                <br></br>
-                <br></br>
-                Come see with your own eyes the potential of co-working. You'll never feel lonely again!   
+                We offer amazing co-working spaces that will meet everyone's needs.
+              </Typography>
+              <Typography sx = {{ py: 2 }}>
+                Come see with your eyes the potential of co-working.
+              </Typography>
+              <Typography>
+                You'll never feel lonely again!   
               </Typography>
             </Grid>
               
@@ -61,28 +64,28 @@ export default function Home() {
             </Grid>
 
             <Grid item xs={12} sm={4}>
-              <Typography variant='h3' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt', mb: 1 }}>
+              <Typography variant='h3' sx = {{ color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt', mb: 1 }}>
                 Flexible  
               </Typography>
-              <Typography sx = {{ textAlign: 'center' }}>
+              <Typography>
                 You can book a space in any of our locations. Then, you just need to show up!  
               </Typography>
             </Grid>
 
             <Grid item xs={12} sm={4}>           
-              <Typography variant='h3' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt', mb: 1 }}>
+              <Typography variant='h3' sx = {{ color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt', mb: 1 }}>
                 Secure  
               </Typography>
-              <Typography sx = {{ textAlign: 'center' }}>
+              <Typography>
                 Our spaces are controlled and checked on. But don't worry, no privacy issues here!  
               </Typography>
             </Grid>
 
             <Grid item xs={12} sm={4}>
-              <Typography variant='h3' sx = {{ textAlign: 'center', color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt', mb: 1 }}>
+              <Typography variant='h3' sx = {{ color: theme.palette.primary.main, fontWeight: 'bold', fontSize: '16pt', mb: 1 }}>
                 Well-equipped  
               </Typography>
-              <Typography sx = {{ textAlign: 'center' }}>
+              <Typography>
                 All of our spaces have top-speed wifi connection, screens and projectors and a coffee machine.   
               </Typography>
             </Grid>

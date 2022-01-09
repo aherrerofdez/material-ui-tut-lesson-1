@@ -104,8 +104,8 @@ export default function Booking() {
             Complete the following form to book a space
           </Typography>
 
-          <Typography sx={{ px: 5, mt: 2, mb: 4, fontSize: '12pt' }}>
-            After completing the form, press the button "BOOK", in order to submit your booking request and a successful message will appear.
+          <Typography sx={{ px: 5, mt: 2, mb: 4, fontSize: '12pt', maxWidth: '36em' }}>
+            After completing the form, press the button "BOOK" to submit your reservation and a successful message will appear.
           </Typography>
 
           <Grid role="form" component="form" aria-label="form for booking a space" container spacing={0}>
