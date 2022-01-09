@@ -103,7 +103,7 @@ export default function Booking() {
             Complete the following form to book a space
           </Typography>
 
-          <Typography sx={{ px: 5, mt: 2, mb: 4, fontSize: '14pt' }}>
+          <Typography sx={{ px: 5, mt: 2, mb: 4, fontSize: '12pt' }}>
             After completing the form, press the button "BOOK", in order to submit your booking request and a successful message will appear.
           </Typography>
 

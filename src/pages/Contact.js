@@ -59,8 +59,12 @@ export default function Contact() {
             Contact us
           </Typography>
           
-          <Typography variant='h2' sx={{ pl: 5, mt: 2, mb: 4, fontWeight: 'bold', fontSize: '18pt', color: theme.palette.primary.main }}>
+          <Typography variant='h2' sx={{ px: 5, mt: 2, fontWeight: 'bold', fontSize: '18pt', color: theme.palette.primary.main }}>
               Send us a message by completing this form
+          </Typography>
+
+          <Typography sx={{ px: 5, mt: 2, mb: 4, fontSize: '12pt' }}>
+            After completing the form, press the button "SEND", in order to submit your message and a confirmation notification will appear on your screen.
           </Typography>
 
           <Grid role="form" aria-label="form for contacting us" container spacing={0}>
