@@ -21,7 +21,7 @@ export default function Home() {
         <Header />
         <Breadcrumbs aria-label="breadcrumb" 
           sx = {{ color: theme.palette.primary.main, ml: 3, mt: 1 }}>
-          <Link underline="hover" href="/"> 
+          <Link underline="hover" href="/#"> 
             {<HomeIcon role="img" sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
             WorCo Home
           </Link>
@@ -120,7 +120,7 @@ export default function Home() {
                     In WorCo, you can find large meeting rooms, small and intimate places 
                     to work alone, rooms for collaboration and much more.
                     <br></br><br></br>
-                    Check out all of our <Link href="/spaces">spaces</Link>.
+                    Check out all of our <Link href="/#/spaces">spaces</Link>.
                   </Typography>
                 </AccordionDetails>
               </Accordion>

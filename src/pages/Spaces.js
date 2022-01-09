@@ -49,7 +49,7 @@ export default function Booking() {
         <Header />
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small"/>}
           sx = {{ color: theme.palette.primary.main, ml: 3, mt: 1 }}>
-          <Link underline="hover" href="/"> 
+          <Link underline="hover" href="/#"> 
             {<HomeIcon role="img" sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
             WorCo Home
           </Link>
@@ -84,7 +84,7 @@ export default function Booking() {
                   Maximum stay: {item.stay}.
                 </Typography>
                 <Typography sx = {{ fontSize: '11pt', textAlign: 'center', pt: 1, mb: 5 }}>
-                  <Link href="/booking" sx = {{ fontWeight: 'bold', py: 2 }}>Book</Link> the {item.title.toLowerCase()} now.
+                  <Link href="/#/booking" sx = {{ fontWeight: 'bold', py: 2 }}>Book</Link> the {item.title.toLowerCase()} now.
                 </Typography>
               </Grid>
             ))}

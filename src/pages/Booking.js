@@ -85,7 +85,7 @@ export default function Booking() {
         <Header />
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small"/>}
           sx = {{ color: theme.palette.primary.main ,ml: 3, mt: 1 }}>
-          <Link underline="hover" href="/"> 
+          <Link underline="hover" href="/#"> 
             {<HomeIcon role="img" sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
             WorCo Home
           </Link>

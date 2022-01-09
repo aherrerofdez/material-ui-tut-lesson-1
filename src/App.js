@@ -10,19 +10,19 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/#">
           <Home />
         </Route>
-        <Route path="/spaces">
+        <Route path="/#/spaces">
           <Spaces />
         </Route>
-        <Route path="/booking">
+        <Route path="/#/booking">
           <Booking />
         </Route>
-        <Route path="/contact-us">
+        <Route path="/#/contact-us">
           <Contact />
         </Route>
-        <Route path="/profile">
+        <Route path="/#/profile">
           <Profile />
         </Route>
         <Route path="/my-reservations">

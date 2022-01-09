@@ -15,8 +15,8 @@ import Link from '@mui/material/Link'
 import { ThemeProvider } from '@mui/material/styles'
 import theme from './Theme'
 
-const pages = ['Spaces', 'Booking', 'Contact Us']
-const settings = ['Profile', 'My Reservations']
+const pages = ['#/Spaces', '#/Booking', '#/Contact Us']
+const settings = ['#/Profile', '#/My Reservations']
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
@@ -48,7 +48,7 @@ const ResponsiveAppBar = () => {
           <Toolbar disableGutters>
             {/* Displays LOGO in desktop version */}
             <Tooltip title="Home">
-              <Link key="home" href="/">
+              <Link key="home" href="/#/">
                 <Typography
                   variant="h6"
                   color="common.white"
@@ -65,12 +65,12 @@ const ResponsiveAppBar = () => {
             <Box sx={{ flexGrow: 1, display: { xs:'none', md:'flex' }, ml:'10px'}}>
               {pages.map((page) => (
                 <Button
-                  key={page}
+                  key={page.slice(2)}
                   onClick={handleCloseNavMenu}
                   href={page.toLowerCase().replace(/\s/g, '-')}
                   sx={{ my: 2, color: 'white', mr:'10px', pt:'9px',  
                       '&:hover': {bgcolor: '#ffffff', color: theme.palette.primary.main }}} >
-                  {page}
+                  {page.slice(2)}
                 </Button>
               ))}
             </Box>
@@ -100,10 +100,10 @@ const ResponsiveAppBar = () => {
                 sx={{ display: { xs: 'block', md: 'none' } }} >
             
                 {pages.map((page) => (
-                  <Link key={page} href={page.toLowerCase().replace(/\s/g, '-')}>
+                  <Link key={page.slice(2)} href={page.toLowerCase().replace(/\s/g, '-')}>
                     <MenuItem onClick={handleCloseNavMenu}
                       sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }} >
-                      <Typography textAlign="center"> {page} </Typography>
+                      <Typography textAlign="center"> {page.slice(2)} </Typography>
                     </MenuItem>
                   </Link>
                 ))}
