@@ -121,7 +121,6 @@ export default function Profile() {
                     role="form"
                     open={openEdit}
                     onClose={handleCloseEdit}
-                    aria-labelledby="edit your personal information"
                     aria-describedby="alert dialog with a form for editing your personal information"
                     aria-label='edit your personal information'>
 
