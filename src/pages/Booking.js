@@ -55,15 +55,16 @@ export default function Booking() {
   const { register } = useForm();
 
   const onSubmit = (e) => {
-    e.preventDefault()
     var flagD = true
     var flagT = true
     if (date['$d'] == 'Invalid Date') {
+      e.preventDefault()
       flagD = false
       alert("The date format is not correct. Please, follow MM/DD/YYYY")
       return false
     }
     if (time['$d'] == 'Invalid Date') {
+      e.preventDefault()
       flagT = false
       alert("The time format is not correct. Please, follow HH:MM AM or HH:MM PM")
       return false
