@@ -70,8 +70,12 @@ export default function Booking() {
       return false
     }
     if (flagD && flagT) {
-      e.currentTarget.submit()
-      alert('Your reservation has been added!')
+      if (window.confirm('Please, confirm this booking')) {
+        alert('Your reservation has been added!')
+      }
+      else {
+        e.preventDefault()
+      }
     }
   }
 

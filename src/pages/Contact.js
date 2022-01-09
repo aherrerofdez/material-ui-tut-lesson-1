@@ -30,7 +30,9 @@ export default function Contact() {
   const { register } = useForm()
 
   const onSubmit = () => {
-    alert('We received your message! We will get back to you soon!')
+    if (window.confirm('Do you want to send the message?')) {
+      alert('We received your message! We will get back to you soon!')
+    }
   }
 
   return (
