@@ -140,7 +140,7 @@ export default function Booking() {
               <Box sx={{ display: 'flex' }}>
                 <FormControl required sx={{ mt: '5px' }} variant="standard">
                   <RadioGroup required name="space" value={space} onChange={handleChangeSpace}
-                    aria-describedby="radiogroup for selecting the space" aria-required="true">
+                    aria-describedby="radiogroup for selecting the space" aria-label="select a space" aria-required="true">
                     <FormControlLabel value="big_blue" label="Big Blue Co-Working Space"
                       control={<Radio required={true}
                         inputProps={{ 'aria-label': 'big blue co-working space', 'aria-describedby': 'big blue space radio button' }} />} />
