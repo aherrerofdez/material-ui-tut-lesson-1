@@ -64,7 +64,7 @@ export default function Profile() {
         <Header />
         <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small"/>}
           sx = {{ color: theme.palette.primary.main, ml: 3, mt: 1 }}>
-          <Link underline="hover" href="https://aherrerofdez.github.io/material-ui-website/#/booking"> 
+          <Link underline="hover" href="https://aherrerofdez.github.io/material-ui-website/#"> 
             {<HomeIcon role="img" sx={{ fontSize: '18px', verticalAlign: 'text-top'}}/>} 
             WorCo Home
           </Link>
