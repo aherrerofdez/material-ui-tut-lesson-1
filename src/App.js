@@ -10,22 +10,22 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="material-ui-website/#">
+        <Route exact path="/">
           <Home />
         </Route>
-        <Route path="material-ui-website/#/spaces">
+        <Route path="/spaces">
           <Spaces />
         </Route>
-        <Route path="material-ui-website/#/booking">
+        <Route path="/booking">
           <Booking />
         </Route>
-        <Route path="material-ui-website/#/contact-us">
+        <Route path="/contact-us">
           <Contact />
         </Route>
-        <Route path="material-ui-website/#/profile">
+        <Route path="/profile">
           <Profile />
         </Route>
-        <Route path="material-ui-website/#/my-reservations">
+        <Route path="/my-reservations">
           <Reservations />
         </Route>
       </Switch>
