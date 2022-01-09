@@ -138,20 +138,24 @@ export default function Reservations() {
             sx = {{pl: 5, py: 2, my: 1, fontSize: '24pt', fontWeight: 'bold' }} >
             Your reservations
           </Typography>
-          <Table aria-label="collapsible table with your reservations">
+          <Table aria-label="collapsible table with your reservations" >
             <TableHead>
               <TableRow>
                 <TableCell />
                 <TableCell>
-                  <Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '15pt', color: theme.palette.primary.main }}>
+                  <Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '14pt', color: theme.palette.primary.main }}>
                     Reservation ID
                   </Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '15pt', color: theme.palette.primary.main }}> Space </Typography>
+                  <Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '14pt', color: theme.palette.primary.main }}>
+                    Space
+                  </Typography>
                 </TableCell>
                 <TableCell> 
-                  <Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '15pt', color: theme.palette.primary.main }}> Date </Typography>
+                  <Typography variant='h2' sx={{ fontWeight: 'bold', fontSize: '14pt', color: theme.palette.primary.main }}>
+                    Date 
+                  </Typography>
                 </TableCell>
               </TableRow>
             </TableHead>

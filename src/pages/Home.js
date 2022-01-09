@@ -175,17 +175,17 @@ export default function Home() {
                     print important documentation or simply get a snack, we got you covered. 
                     We are ready to provide top-quality services and equipment for your needs, including:
                   </Typography>
-                  <List aria-label="list of services and resources">
-                    <ListItem aria-label="wifi" sx={{ py: 0, px: 2 }}>
+                  <List aria-label="list of services and resources" sx={{ fontFamily: 'Roboto' }}>
+                    <ListItem aria-label="wifi" sx={{ pb: 0.5, px: 2 }}>
                       - Fast reliable Wi-Fi
                     </ListItem>
-                    <ListItem aria-label="monitors" sx={{ py: 0, px: 2 }}>
+                    <ListItem aria-label="monitors" sx={{ pb: 0.5, px: 2 }}>
                       - High quality monitors
                     </ListItem>
-                    <ListItem aria-label="printers and stationery" sx={{ py: 0, px: 2 }}>
+                    <ListItem aria-label="printers and stationery" sx={{ pb: 0.5, px: 2 }}>
                       - Printers and stationery
                     </ListItem>
-                    <ListItem aria-label="kitchen and snacks" sx={{ py: 0, px: 2 }}>
+                    <ListItem aria-label="kitchen and snacks" sx={{ pb: 0.5, px: 2 }}>
                       - Fully equiped kitchen and snacks
                     </ListItem>
                   </List>
