@@ -145,10 +145,10 @@ const ResponsiveAppBar = () => {
                 onClose={handleCloseUserMenu} >
 
                 {settings.map((setting) => (
-                  <Link key={setting} href={setting.toLowerCase().replace(/\s/g, '-')}>
+                  <Link key={setting.slice(2)} href={setting.toLowerCase().replace(/\s/g, '-')}>
                     <MenuItem onClick={handleCloseNavMenu} 
                       sx = {{ '&:hover': { backgroundColor: theme.palette.btnhoverlight.main, color: theme.palette.btnhover.main } }}>
-                      <Typography textAlign="center"> {setting} </Typography>
+                      <Typography textAlign="center"> {setting.slice(2)} </Typography>
                     </MenuItem>
                   </Link>
                 ))}
