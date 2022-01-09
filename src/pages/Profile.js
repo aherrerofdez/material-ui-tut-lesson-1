@@ -122,10 +122,11 @@ export default function Profile() {
                     open={openEdit}
                     onClose={handleCloseEdit}
                     aria-describedby="alert dialog with a form for editing your personal information"
-                    aria-label='edit your personal information'>
+                    aria-label='edit your personal information'
+                    aria-labelledby='alert-dialog-title'>
 
                     <DialogTitle id="alert-dialog-title">
-                      Insert your data
+                      Insert your updated data
                     </DialogTitle>
 
                     <DialogContent>
