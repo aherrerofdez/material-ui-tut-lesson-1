@@ -135,7 +135,7 @@ export default function Profile() {
                       </DialogContentText>
                       
                       <TextField
-                        required
+                        required sx = {{ mb: 2 }}
                         inputProps={{ 'aria-label': 'new full name', 'aria-describedby': 'new full name textfield' }}
                         id="name_textfield"
                         placeholder="Full name"
@@ -147,7 +147,7 @@ export default function Profile() {
                       </DialogContentText>
 
                       <TextField
-                        required
+                        required sx = {{ mb: 2 }}
                         inputProps={{ 'aria-label': 'new email', 'aria-describedby': 'new email textfield' }}
                         id="email_textfield"
                         placeholder="Email"
